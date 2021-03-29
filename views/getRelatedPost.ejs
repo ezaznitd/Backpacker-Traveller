@@ -1,0 +1,49 @@
+<!-- Page Header -->
+<header class="masthead" style="background-image: url('img/about.jpg')">
+<div class="overlay"></div>
+<div class="container">
+    <div class="row">
+    <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="site-heading">
+        <h1>WELCOME</h1>
+        <span class="subheading">Travel smarter, cheaper, longer Where do you want to go?</span>
+        </div>
+    </div>
+    </div>
+</div>
+</header>
+
+<!-- Main Content -->
+<!-- class="container" -->
+<div style="padding-left: 6%; padding-right: 6%;">
+    <div class="row" style="display: flex;flex-wrap: wrap;justify-content: center;align-items: center;">
+        <div class="col-lg-16 col-md-16 mx-auto">
+            <% for(var i=0; i < result.length; i++) { %>
+                <div class="post-preview" style="display: none; background-color: #FFFFFF; padding-left: 5%; padding-right: 5%; padding-top: 30px; padding-bottom: 30px;" id="Card">
+                    <a href="/single-post-<%- result[i]._id %>">
+                        <h2 class="post-title">
+                        <%- result[i].title %>
+                        </h2>
+                    </a>
+                    <p class="post-meta">Posted by
+                        <a href="#"><%- result[i].username %></a>
+                        on <%- result[i].createdAt %>
+                    </p>
+                    <p class="post-description" ><%- result[i].description %></p>
+                    <div id="slideshow" class="center">
+                        <% for(var j=0; j < result[i].image.length; j++) { %>
+                            <div>
+                                <img src="<%- result[i].image[j] %>" width="100%" height="400" >
+                            </div>
+                        <% } %>
+                    </div>
+                    <p><%- result[i].content %></p>
+                </div>
+                <br>
+            <% } %>
+        </div>
+        <a href="#" id="loadMore">Load More</a>
+    </div>
+</div>
+
+<br>

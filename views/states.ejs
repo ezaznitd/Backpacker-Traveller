@@ -1,0 +1,52 @@
+
+<%if (auth=='600c0f0fbc4b391f0135065e') { %>
+    <div class="editPost">
+        <a href="/new-state" ><i class="fa fa-plus"></i></a>
+    </div>
+    <br><br>
+<% } %>
+
+<section id="portfolio" class="section-padding wow fadeInUp delay-05s">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h2 class="service-title pad-bt15">Travel Destinations</h2>
+                <!-- <p class="sub-title pad-bt15">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod<br>tempor incididunt ut labore et dolore magna aliqua.</p> -->
+                <hr class="bottom-line">
+            </div>
+            <% for(var i=0;i < states.length; i++) { %>
+                <div class="col-md-4 col-sm-6 col-xs-12 padding-right-zero mr-btn-15">
+                    <figure>
+                        <img src="<%- states[i].image %>" class="img-responsive">
+                        <figcaption>
+                            <a href="/<%- states[i].name %>-all-locations-<%- states[i]._id %>"><h2 style="text-align: center;"><%- states[i].name %></h2></a>
+                            <p><%- states[i].description %></p>
+                        </figcaption>
+                    </figure>
+                </div>
+            <% } %>
+        </div>
+        <iframe width="100%" height="400" id="gmap_canvas" src="https://maps.google.com/maps?q=india&t=&z=4&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+    </div>
+</section>
+
+<div class="container-fluid pb-4 pt-5">
+    <div class="container animate-box">
+        <div>
+            <div class="fh5co_heading fh5co_heading_border_bottom py-2 mb-4">News</div>
+        </div>
+        <div class="owl-carousel owl-theme" id="slider2">
+            <% for(var i=0; i < Math.min(posts.length, 6); i++) { %>
+                <div class="item px-2">
+                    <div class="fh5co_hover_news_img">
+                        <div class="fh5co_news_img"><img src="<%- posts[i].image %>" alt=""/></div>
+                        <div>
+                            <a href="single.html" class="d-block fh5co_small_post_heading"><span class=""><%- posts[i].title %></span></a>
+                            <div class="c_g"><i class="fa fa-clock-o"></i> <%- posts[i].createdAt.toDateString() %></div>
+                        </div>
+                    </div>
+                </div>
+            <% } %>
+        </div>
+    </div>
+</div>

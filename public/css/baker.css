@@ -1,0 +1,192 @@
+.section-padding {
+    padding: 60px 0px;
+  }
+
+@-webkit-keyframes fadeInUp {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 100%, 0);
+        transform: translate3d(0, 100%, 0);
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 100%, 0);
+        transform: translate3d(0, 100%, 0);
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+
+.fadeInUp {
+    -webkit-animation-name: fadeInUp;
+    animation-name: fadeInUp;
+}
+
+.pad-bt15 {
+    padding-bottom: 15px;
+}
+
+.sub-title {
+    font-size: 20px;
+}
+
+@media (min-width: 20px) and (max-width: 450px) {
+    .sub-title {
+      font-size: 15px;
+    }
+}
+
+.bottom-line {
+    margin-top: 20px;
+    margin-bottom: 40px;
+    border: 0;
+    border-top: 0px;
+    height: 3px;
+    width: 40px;
+    background-color: #BE9E21;
+}
+
+.portfolio-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.portfolio-item figure {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    cursor: pointer;
+}
+
+.portfolio-item figure img {
+    display: block;
+    position: relative;
+    z-index: 10;
+    margin: -15px 0
+} 
+
+.portfolio-item figure figcaption {
+    display: block;
+    position: absolute;
+    z-index: 5;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+.portfolio-item figure h2 {
+    font-family: 'Fira Sans', sans-serif;
+    color: #fff;
+    font-size: 20px;
+    text-align: left;
+    padding-bottom: 15px;
+}  
+
+.portfolio-item figure p {
+    display: block;
+    line-height: 18px;
+    margin: 0;
+    color: #fff;
+    text-align: left
+}
+
+.portfolio-item figure figcaption {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 59px 30px;
+    background-color: #BE9E21;
+    backface-visibility: hidden;
+    -webkit-transform: rotateY(-180deg);
+    -moz-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    transition: all .5s;
+    text-align: center;
+}  
+
+.portfolio-item figure img {
+    backface-visibility: hidden;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    transition: all .5s
+}
+  
+.portfolio-item figure:hover img, figure.hover img {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    transform: rotateY(180deg)
+}
+  
+.portfolio-item figure:hover figcaption, figure.hover figcaption {
+    -webkit-transform: rotateY(0);
+    -moz-transform: rotateY(0);
+    transform: rotateY(0)
+}
+@media (min-width: 768px) and (max-width: 980px) {
+    .service-item, .blog-sec, .wrap-item, .loction-info {
+        margin-bottom: 15px;
+    }
+
+    .portfolio-item figure figcaption {
+        padding: 55px 30px;
+    }
+
+    .padding-right-zero {
+        padding-right: 15px !important;
+    }
+}
+@media (min-width: 20px) and (max-width: 450px) {
+    .service-title {
+        font-size: 28px;
+    }
+
+    .sub-title {
+        font-size: 15px;
+    }
+
+    .portfolio-item figure figcaption {
+        padding: 30px 30px;
+    }
+
+    .padding-right-zero {
+        padding-right: 15px !important;
+    }
+
+    .portfolio-item figure p {
+        font-size: 14px;
+    }
+
+    .portfolio-item figure h2 {
+        font-size: 18px;
+    }
+}
+
+.padding-right-zero {
+    padding-right: 0px !important;
+}
+
+.img-responsive, .thumbnail a>img,.thumbnail > img {
+    display:block;
+    max-width:100%;
+    height:auto
+}
+
+.mr-btn-15 {
+    margin-bottom: 15px;
+}

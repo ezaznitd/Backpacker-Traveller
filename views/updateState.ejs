@@ -1,0 +1,61 @@
+<!-- Page Header -->
+<header class="masthead">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="page-heading">
+                <h1>Update State</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    </header>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <form action="/state/update-<%= state.name %>-<%- state._id %>" method="POST" encType="multipart/form-data">
+                    <div class="control-group">
+                        <div class="form-group floating-label-form-group controls">
+                            <label>Username</label>
+                            <input type="text" name="username" placeholder="Username" class="form-control" value="<%- state.username %>">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="form-group floating-label-form-group controls">
+                            <label>State Name</label>
+                            <input type="text" name="name" placeholder="State Name" class="form-control" value="<%- state.name %>">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="form-group floating-label-form-group controls">
+                            <label>Description</label>
+                            <input type="text" name="description" placeholder="Description" class="form-control" value="<%- state.description %>">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="form-group floating-label-form-group controls">
+                            <label>Map Url</label>
+                            <input type="text" name="map" placeholder="Map Url" class="form-control" value="<%- state.map %>">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="form-group floating-label-form-group controls">
+                            <label>Image Url</label>
+                            <input type="text" name="image" placeholder="Image Url" class="form-control" value="<%- state.image %>">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="form-group floating-label-form-group controls">
+                            <label>Content</label>
+                            <textarea name="content" placeholder="Content ..." cols="30" rows="10" class="form-control"><%- state.content %></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group my-4 text-center">
+                        <button class="btn btn-primary">Update State</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>

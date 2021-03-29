@@ -1,0 +1,61 @@
+<!-- Page Header -->
+<header class="masthead">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="site-heading">
+                <h1>WELCOME</h1>
+                <span class="subheading">Travel smarter, cheaper, longer Where do you want to go?</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<!-- <div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            <h1>This is about page</h1>
+        </div>
+    </div>
+</div> -->
+<%if (auth=='600c0f0fbc4b391f0135065e') { %>
+    <div class="editPost">
+        <a href="/new-photo" ><i class="fa fa-plus"></i></a>
+    </div>
+    <br><br>
+<% } %>
+
+<section id="portfolio" class="section-padding wow fadeInUp delay-05s">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h2 class="service-title pad-bt15">Our Recent Works</h2>
+                <p class="sub-title pad-bt15">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod<br>tempor incididunt ut labore et dolore magna aliqua.</p>
+                <hr class="bottom-line">
+            </div>
+            <% for(var i=0;i < photos.length; i++) { %>
+                <div class="col-md-4 col-sm-6 col-xs-12 portfolio-item padding-right-zero mr-btn-15">
+                    <figure>
+                        <img src="<%= photos[i].image %>" class="img-responsive">
+                        <figcaption>
+                            <%if (auth=='600c0f0fbc4b391f0135065e') { %>
+                                <div class="editPost">
+                                    <a href="/get-photo-<%= photos[i]._id %>" ><i class="fa fa-pencil-square-o"></i></a>
+                                    <a href="/delete-photo-<%= photos[i]._id %>" onclick="return confirm('Are you sure you want to delete this post?');"><i class="fa fa-trash"></i></a>
+                                </div>
+                                <br><br>
+                            <% } %>
+                            <h2><%- photos[i].title %></h2>
+                            <p><%- photos[i].content %></p>
+                        </figcaption>
+                    </figure> 
+                </div>
+            <% } %>
+        </div>
+    </div>
+</section>
+
+<hr>

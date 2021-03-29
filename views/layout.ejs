@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js" type="text/javascript">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title>One Life One Dream</title>
+<link rel="icon" href="img/icon.png" type="image/icon type">
+
+<link href="css/media_query.css" rel="stylesheet" type="text/css"/>
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+		integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<link href="css/animate.css" rel="stylesheet" type="text/css"/>
+<link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+<link href="css/owl.carousel.css" rel="stylesheet" type="text/css"/>
+<link href="css/owl.theme.default.css" rel="stylesheet" type="text/css"/>
+<!-- Bootstrap CSS -->
+<link href="css/style_1.css" rel="stylesheet" type="text/css"/>
+<!-- Photography Section -->
+<link href="css/baker.css" rel="stylesheet" type="text/css"/>
+<!-- Photography Section -->
+<!-- Modernizr JS -->
+<script src="js/modernizr-3.5.0.min.js"></script>
+
+<!-- Text Editor -->
+<strong><script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script></strong>
+<script>
+	tinymce.init({
+		selector: 'textarea',
+		plugins: 'textpattern link emoticons code preview lists advlist table autosave wordcount insertdatetime print autolink help hr nonbreaking template image visualchars visualblocks autoresize',
+		toolbar: ['undo redo | bold italic underline forecolor backcolor | fontselect fontsizeselect | alignleft aligncenter alignright alignjustify',
+		'numlist bullist outdent indent | table tabledelete | tableprops tablerowprops tablecellprops | tableinsertrowbefore tableinsertrowafter tabledeleterow | tableinsertcolbefore tableinsertcolafter tabledeletecol | link emoticons preview'],
+		mobile: {
+			theme: 'mobile'
+		},
+		image: {
+			maxLength: '100%'
+		},
+		nonbreaking_force_tab: true,
+		autoresize_bottom_margin: 250,
+		template_mdate_format: '%m/%d/%Y : %H:%M',
+		template_replace_values: {
+			username: 'Jack Black',
+			staffid: '991234',
+			inboth_username: 'Famous Person',
+			inboth_staffid: '2213',
+		},
+		template_preview_replace_values: {
+			preview_username: 'Jack Black',
+			preview_staffid: '991234',
+			inboth_username: 'Famous Person',
+			inboth_staffid: '2213',
+		},
+		templates : [
+			{
+			title: 'Date modified example',
+			description: 'Adds a timestamp indicating the last time the document modified.',
+			content: '<p>Last Modified: <time class="mdate">This will be replaced with the date modified.</time></p>'
+			},
+			{
+			title: 'Replace values example',
+			description: 'These values will be replaced when the template is inserted into the editor content.',
+			content: '<p>Name: {$username}, StaffID: {$staffid}</p>'
+			},
+			{
+			title: 'Replace values preview example',
+			description: 'These values are replaced in the preview, but not when inserted into the editor content.',
+			content: '<p>Name: {$preview_username}, StaffID: {$preview_staffid}</p>'
+			},
+			{
+			title: 'Replace values preview and content example',
+			description: 'These values are replaced in the preview, and in the content.',
+			content: '<p>Name: {$inboth_username}, StaffID: {$inboth_staffid}</p>'
+			}
+		],
+		content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }',
+		textpattern_patterns:	[
+			{start: '*', end: '*', format: 'italic'},
+			{start: '**', end: '**', format: 'bold'},
+			{start: '#', format: 'h1'},
+			{start: '##', format: 'h2'},
+			{start: '###', format: 'h3'},
+			{start: '####', format: 'h4'},
+			{start: '#####', format: 'h5'},
+			{start: '######', format: 'h6'},
+			{start: '* ', cmd: 'InsertUnorderedList'},
+			{start: '- ', cmd: 'InsertUnorderedList' },
+			{start: '1. ', cmd: 'InsertOrderedList', value: { 'list-style-type': 'decimal' }},
+			{start: 'a. ', cmd: 'InsertOrderedList', value: { 'list-style-type': 'lower-alpha' }},
+			{start: 'i. ', cmd: 'InsertOrderedList', value: { 'list-style-type': 'lower-roman' }},
+			{start: '---', replacement: '<hr/>'},
+			{start: '--', replacement: '—'},
+			{start: '-', replacement: '—'},
+			{start: '(c)', replacement: '©'},
+			
+		]
+	});
+</script>
+<!-- Text Editor -->
+</head>
+
+<body>
+<!-- Navigation -->
+	<div class="container-fluid fh5co_header_bg">
+		<div class="container">
+			<div class="row">
+				<div class="col-12 fh5co_mediya_center"><a href="#" class="color_fff fh5co_mediya_setting"><i
+						class="fa fa-clock-o" id="date-time"></i>&nbsp;&nbsp;&nbsp;<%- dateTime %></a>
+					<% if (language == 'bengali') { %>
+						<div class="d-inline-block fh5co_trading_posotion_relative"><a href="/change-language" class="treding_btn"><strong>ENGLISH</strong></a>
+							<div class="fh5co_treding_position_absolute"></div>
+						</div>
+					<% } else{ %>
+						<div class="d-inline-block fh5co_trading_posotion_relative"><a href="/change-language" class="treding_btn">বাংলা</a>
+							<div class="fh5co_treding_position_absolute"></div>
+						</div>
+					<% } %>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container-fluid">
+		<div class="container">
+			<div class="row" style="width: 100%; height: 350px;">
+				<div class="col-12 col-md-3 fh5co_padding_menu">
+					<img src="img/logo.png" alt="img" class="fh5co_logo_width"/>
+				</div>
+				<!-- <div class="col-12 col-md-9 align-self-center fh5co_mediya_right">
+					<div class="text-center d-inline-block">
+						<a class="fh5co_display_table"><div class="fh5co_verticle_middle" style="color: #ff0000;"><i class="fa fa-youtube"></i></div></a>
+					</div>
+					<div class="text-center d-inline-block">
+						<a class="fh5co_display_table"><div class="fh5co_verticle_middle" style="color: #E1306C;"><i class="fa fa-instagram"></i></div></a>
+					</div>
+					<div class="text-center d-inline-block">
+						<a href="https://twitter.com/fh5co" target="_blank" class="fh5co_display_table"><div class="fh5co_verticle_middle" style="color: #1DA1F2;"><i class="fa fa-twitter"></i></div></a>
+					</div>
+					<div class="text-center d-inline-block">
+						<a href="https://fb.com/fh5co" target="_blank" class="fh5co_display_table"><div class="fh5co_verticle_middle" style="color: #4267B2;"><i class="fa fa-facebook"></i></div></a>
+					</div>
+					<div class="text-center d-inline-block">
+						<a class="fh5co_display_table"><div class="fh5co_verticle_middle"><i class="fa fa-search"></i></div></a>
+					</div>
+					<div class="d-inline-block text-center"><img src="images/country.png" alt="img" class="fh5co_country_width"/></div>
+					<div class="d-inline-block text-center dd_position_relative ">
+						<select class="form-control fh5co_text_select_option">
+							<option>English </option>
+							<option>French </option>
+							<option>German </option>
+							<option>Spanish </option>
+						</select>
+					</div>
+					<div class="clearfix"></div>
+				</div> -->
+			</div>
+		</div>
+	</div>
+	<div class="container-fluid bg-faded fh5co_padd_mediya padding_786">
+		<div class="container padding_786">
+			<nav class="navbar navbar-toggleable-md navbar-light ">
+					<button class="navbar-toggler navbar-toggler-left" type="button" data-toggle="collapse"
+							data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+							aria-label="Toggle navigation"><span class="fa fa-bars"></span></button>
+					<!-- <a class="navbar-brand" style="float: left;" href="#"><img src="img/logo.png" alt="img" class="mobile_logo_width"/></a>
+					<a class="navbar-brand" style="float: right;" href="#"><i class="fa fa-search" aria-hidden="true"></i></a> -->
+					<div class="collapse navbar-collapse" id="navbarSupportedContent">
+						<ul class="navbar-nav mr-auto">
+							<li class="nav-item active">
+								<a class="nav-link" href="/">HOME<span class="sr-only">(current)</span></a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="/all-posts-Blog Post">BLOG<span class="sr-only">(current)</span></a>
+							</li>
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" id="dropdownMenuButton2" data-toggle="dropdown"
+								aria-haspopup="true" aria-expanded="false">TRAVEL<span class="sr-only">(current)</span></a>
+								<div class="dropdown-menu" aria-labelledby="dropdownMenuLink_1">
+									<a class="dropdown-item" href="/all-posts-Travel Story">TRAVEL STORIES</a>
+									<a class="dropdown-item" href="/all-posts-Travel Tip">TRAVEL TIPS</a>
+									<a class="dropdown-item" href="/all-visitedStates">VISITED STATES</a>
+								</div>
+							</li>
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" id="dropdownMenuButton2" data-toggle="dropdown"
+								aria-haspopup="true" aria-expanded="false">DESTINATIONS<span class="sr-only">(current)</span></a>
+								<div class="dropdown-menu" aria-labelledby="dropdownMenuLink_1">
+									<% for(var i=0; i < states.length; i++) { %>
+										<a class="dropdown-item" href="/<%- states[i].name %>-all-locations-<%- states[i]._id %>"><%- states[i].name %></a>
+									<% } %>
+								</div>
+							</li>
+							<li class="nav-item ">
+								<a class="nav-link" href="/all-videos-Review">REVIEWS<span class="sr-only">(current)</span></a>
+							</li>
+							<li class="nav-item ">
+								<a class="nav-link" href="/all-videos-Travel Video">VIDEOS<span class="sr-only">(current)</span></a>
+							</li>
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" id="dropdownMenuButton2" data-toggle="dropdown"
+								aria-haspopup="true" aria-expanded="false">PHOTOGRAPHY<span class="sr-only">(current)</span></a>
+								<div class="dropdown-menu" aria-labelledby="dropdownMenuLink_1">
+									<a class="dropdown-item" href="/travel-photography-tips-60534749775cb32b2bc6f96f">TAKE BETTER PHOTOS</a>
+									<a class="dropdown-item" href="/best-travel-camera-6053495d775cb32b2bc6f970">BEST TRAVEL CAMERAS</a>
+									<a class="dropdown-item" href="/my-photo-gear-60534bae72fd9c2feb14e3e2">MY PHOTO GEAR</a>
+									<a class="dropdown-item" href="/photos">BEST PHOTO COLLECTIONS</a>
+								</div>
+							</li>
+							<!-- <%if (!auth) { %>
+								<li class="nav-item ">
+									<a class="nav-link" href="/auth-login">LOGIN / REGISTER<span class="sr-only">(current)</span></a>
+								</li>
+								<li class="nav-item ">
+									<a class="nav-link" href="/auth-register">REGISTER<span class="sr-only">(current)</span></a>
+								</li>
+							<% } else{ %>
+								<li class="nav-item ">
+									<a class="nav-link" href="/auth-logout">LOGOUT<span class="sr-only">(current)</span></a>
+								</li>
+							<% } %>
+							<li class="nav-item ">
+								<a class="fh5co_display_table text-center"><div class="fh5co_verticle_middle"><i class="fa fa-search"></i></div></a>
+							</li> -->
+							<!-- <li class="nav-item ">
+								<a class="nav-link" href="#">BENGALI<span class="sr-only">(current)</span></a>
+							</li> -->
+						</ul>
+					</div>
+			</nav>
+		</div>
+	</div>
+	<!-- <div class="container-fluid">
+		<div class="container">
+			<div class="row">
+				<div class="col-12 col-md-3 fh5co_padding_menu">
+					<img src="img/logo.png" alt="img" class="fh5co_logo_width"/>
+				</div>
+				<div class="col-12 col-md-9 align-self-center fh5co_mediya_right">
+					<div class="text-center d-inline-block">
+						<a class="fh5co_display_table"><div class="fh5co_verticle_middle" style="color: #ff0000;"><i class="fa fa-youtube"></i></div></a>
+					</div>
+					<div class="text-center d-inline-block">
+						<a class="fh5co_display_table"><div class="fh5co_verticle_middle" style="color: #E1306C;"><i class="fa fa-instagram"></i></div></a>
+					</div>
+					<div class="text-center d-inline-block">
+						<a href="https://twitter.com/fh5co" target="_blank" class="fh5co_display_table"><div class="fh5co_verticle_middle" style="color: #1DA1F2;"><i class="fa fa-twitter"></i></div></a>
+					</div>
+					<div class="text-center d-inline-block">
+						<a href="https://fb.com/fh5co" target="_blank" class="fh5co_display_table"><div class="fh5co_verticle_middle" style="color: #4267B2;"><i class="fa fa-facebook"></i></div></a>
+					</div>
+					<div class="text-center d-inline-block">
+						<a class="fh5co_display_table"><div class="fh5co_verticle_middle"><i class="fa fa-search"></i></div></a>
+					</div>
+					<div class="d-inline-block text-center"><img src="images/country.png" alt="img" class="fh5co_country_width"/></div>
+					<div class="d-inline-block text-center dd_position_relative ">
+						<select class="form-control fh5co_text_select_option">
+							<option>English </option>
+							<option>French </option>
+							<option>German </option>
+							<option>Spanish </option>
+						</select>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+		</div>
+	</div> -->
+
+	<!-- @!section('content') -->
+
+	<%- body -%>
+
+	<!-- Footer -->
+	<div class="container-fluid fh5co_footer_bg pb-3">
+		<div class="container animate-box">
+			<div class="row">
+				<!-- <div class="col-12 spdp_right py-5"><img src="img/icon.png" alt="img" class="footer_logo"/></div> -->
+				<div class="clearfix"></div>
+				<div class="col-12 col-md-4 col-lg-3">
+					<div class="footer_main_title py-3"> About</div>
+					<div class="footer_sub_about pb-3"> Lorem Ipsum is simply dummy text of the printing and typesetting
+						industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an
+						unknown printer took a galley of type and scrambled it to make a type specimen book.
+					</div>
+					<div class="footer_mediya_icon">
+						<div class="text-center d-inline-block"><a class="fh5co_display_table_footer">
+							<div class="fh5co_verticle_middle" style="color: #2867B2;"><i class="fa fa-linkedin"></i></div>
+						</a></div>
+						<div class="text-center d-inline-block"><a class="fh5co_display_table_footer">
+							<div class="fh5co_verticle_middle" style="color: #1DA1F2;"><i class="fa fa-twitter"></i></div>
+						</a></div>
+						<div class="text-center d-inline-block"><a class="fh5co_display_table_footer">
+							<div class="fh5co_verticle_middle" style="color: #4267B2;"><i class="fa fa-facebook"></i></div>
+						</a></div>
+						<div class="text-center d-inline-block"><a class="fh5co_display_table_footer">
+							<div class="fh5co_verticle_middle" style="color: #E1306C;"><i class="fa fa-instagram"></i></div>
+						</a></div>
+						<div class="text-center d-inline-block"><a class="fh5co_display_table_footer">
+							<div class="fh5co_verticle_middle" style="color: #ff0000;"><i class="fa fa-youtube"></i></div>
+						</a></div>
+						<div class="text-center d-inline-block"><a class="fh5co_display_table_footer">
+							<div class="fh5co_verticle_middle"><i class="fa fa-github"></i></div>
+						</a></div>
+					</div>
+				</div>
+				<div class="col-12 col-md-3 col-lg-2">
+					<div class="footer_main_title py-3"> Category</div>
+					<ul class="footer_menu">
+						<li><a href="/all-posts-Blog Post" class=""><i class="fa fa-angle-right"></i>&nbsp;&nbsp; Blogs</a></li>
+						<li><a href="#" class=""><i class="fa fa-angle-right"></i>&nbsp;&nbsp; Entertainment</a></li>
+						<li><a href="/all-posts-Travel Story" class=""><i class="fa fa-angle-right"></i>&nbsp;&nbsp; Travel Stories</a></li>
+						<li><a href="/all-posts-Travel Tip" class=""><i class="fa fa-angle-right"></i>&nbsp;&nbsp; Travel Tips</a></li>
+						<li><a href="/all-videos-Travel Video" class=""><i class="fa fa-angle-right"></i>&nbsp;&nbsp; YouTube Videos</a></li>
+						<li><a href="#" class=""><i class="fa fa-angle-right"></i>&nbsp;&nbsp; Politics</a></li>
+						<li><a href="#" class=""><i class="fa fa-angle-right"></i>&nbsp;&nbsp; Technology</a></li>
+						<li><a href="/all-visitedStates" class=""><i class="fa fa-angle-right"></i>&nbsp;&nbsp; Explore India</a></li>
+						<li><a href="#" class=""><i class="fa fa-angle-right"></i>&nbsp;&nbsp; Photography</a></li>
+					</ul>
+				</div>
+				<div class="col-12 col-md-5 col-lg-3 position_footer_relative">
+					<div class="footer_main_title py-3"> Most Viewed Posts</div>
+					<% for(var i=0; i < Math.min(trending.length, 5); i++) { %>
+						<div class="footer_makes_sub_font"> <i class="fa fa-clock-o"></i> <%- trending[i].createdAt.toDateString() %></div>
+						<a href="/single-post-<%- trending[i].postType %>-<%- trending[i].slug %>-<%- trending[i]._id %>" class="footer_post pb-4"> <%- trending[i].title %>. </a>
+					<% } %>
+					<!-- <div class="footer_position_absolute"><img src="img/footer_sub_tipik.png" alt="img" class="width_footer_sub_img"/></div> -->
+				</div>
+				<div class="col-12 col-md-12 col-lg-4 ">
+					<div class="footer_main_title py-3"> Last Modified Posts</div>
+					<% for(var i=0; i < Math.min(lastModified.length, 9); i++) { %>
+						<a href="/single-post-<%- lastModified[i].postType %>-<%- lastModified[i].slug %>-<%- lastModified[i]._id %>" class="footer_img_post_6"><img src="<%- lastModified[i].image %>" alt="img"/></a>
+					<% } %>
+				</div>
+			</div>
+			<div class="row justify-content-center pt-2 pb-4">
+				<div class="col-12 col-md-8 col-lg-7 ">
+					<div class="input-group">
+						<span class="input-group-addon fh5co_footer_text_box" id="basic-addon1"><i class="fa fa-envelope"></i></span>
+						<input type="text" class="form-control fh5co_footer_text_box" placeholder="Enter your email..." aria-describedby="basic-addon1">
+						<a href="#" class="input-group-addon fh5co_footer_subcribe" id="basic-addon12"> <i class="fa fa-paper-plane-o"></i>&nbsp;&nbsp;Subscribe</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container-fluid fh5co_footer_right_reserved">
+		<div class="container">
+			<div class="row  ">
+				<div class="col-12 col-md-6 py-4 Reserved"> © Copyright 2021, All rights reserved. Design by <a href="https://freehtml5.co" title="Free HTML5 Bootstrap templates">Ezaz Hossain</a>. </div>
+				<div class="col-12 col-md-6 spdp_right py-4">
+					<a href="/" class="footer_last_part_menu">Home</a>
+					<a href="/about" class="footer_last_part_menu">About</a>
+					<a href="/contact" class="footer_last_part_menu">Contact</a>
+					<a href="#" class="footer_last_part_menu">Privacy Policy</a>
+					<a href="#" class="footer_last_part_menu">FAQ</a>
+					<a href="#" class="footer_last_part_menu">Terms of Service</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="gototop js-top">
+		<a href="#" class="js-gotop"><i class="fa fa-arrow-up"></i></a>
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="js/owl.carousel.min.js"></script>
+	<!--<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
+			integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+			crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+			integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+			crossorigin="anonymous"></script>
+	<!-- Waypoints -->
+	<script src="js/jquery.waypoints.min.js"></script>
+	<!-- Main -->
+	<script src="js/main.js"></script>
+</body>
+
+</html>
