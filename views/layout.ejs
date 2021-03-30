@@ -306,33 +306,43 @@
 						</a></div>
 					</div>
 				</div>
-				<div class="col-12 col-md-3 col-lg-2">
+				<div class="col-12 col-md-5 col-lg-3 position_footer_relative">
 					<div class="footer_main_title py-3"> Category</div>
 					<ul class="footer_menu">
-						<li><a href="/all-posts-Blog Post" class=""><i class="fa fa-angle-right"></i>&nbsp;&nbsp; Blogs</a></li>
 						<li><a href="#" class=""><i class="fa fa-angle-right"></i>&nbsp;&nbsp; Entertainment</a></li>
-						<li><a href="/all-posts-Travel Story" class=""><i class="fa fa-angle-right"></i>&nbsp;&nbsp; Travel Stories</a></li>
-						<li><a href="/all-posts-Travel Tip" class=""><i class="fa fa-angle-right"></i>&nbsp;&nbsp; Travel Tips</a></li>
-						<li><a href="/all-videos-Travel Video" class=""><i class="fa fa-angle-right"></i>&nbsp;&nbsp; YouTube Videos</a></li>
 						<li><a href="#" class=""><i class="fa fa-angle-right"></i>&nbsp;&nbsp; Politics</a></li>
 						<li><a href="#" class=""><i class="fa fa-angle-right"></i>&nbsp;&nbsp; Technology</a></li>
-						<li><a href="/all-visitedStates" class=""><i class="fa fa-angle-right"></i>&nbsp;&nbsp; Explore India</a></li>
-						<li><a href="#" class=""><i class="fa fa-angle-right"></i>&nbsp;&nbsp; Photography</a></li>
+						<li><a href="#" class=""><i class="fa fa-angle-right"></i>&nbsp;&nbsp; Social</a></li>
+						<li><a href="#" class=""><i class="fa fa-angle-right"></i>&nbsp;&nbsp; Education</a></li>
+						<li><a href="#" class=""><i class="fa fa-angle-right"></i>&nbsp;&nbsp; Lifestyle</a></li>
 					</ul>
 				</div>
 				<div class="col-12 col-md-5 col-lg-3 position_footer_relative">
-					<div class="footer_main_title py-3"> Most Viewed Posts</div>
-					<% for(var i=0; i < Math.min(trending.length, 5); i++) { %>
+					<div class="footer_main_title py-3"> Destination</div>
+					<!-- <% for(var i=0; i < Math.min(trending.length, 5); i++) { %>
 						<div class="footer_makes_sub_font"> <i class="fa fa-clock-o"></i> <%- trending[i].createdAt.toDateString() %></div>
 						<a href="/single-post-<%- trending[i].postType %>-<%- trending[i].slug %>-<%- trending[i]._id %>" class="footer_post pb-4"> <%- trending[i].title %>. </a>
-					<% } %>
+					<% } %> -->
+					<ul class="footer_menu">
+						<% for(var i=0; i < Math.min(states.length, 5); i++) { %>
+							<li><a href="/<%- states[i].name %>-all-locations-<%- states[i]._id %>" class=""><i class="fa fa-angle-right"></i>&nbsp;&nbsp; <%- states[i].name %></a></li>
+						<% } %>
+					</ul>
 					<!-- <div class="footer_position_absolute"><img src="img/footer_sub_tipik.png" alt="img" class="width_footer_sub_img"/></div> -->
 				</div>
-				<div class="col-12 col-md-12 col-lg-4 ">
-					<div class="footer_main_title py-3"> Last Modified Posts</div>
-					<% for(var i=0; i < Math.min(lastModified.length, 9); i++) { %>
+				<div class="col-12 col-md-5 col-lg-3 position_footer_relative ">
+					<div class="footer_main_title py-3"> Quick Link</div>
+					<ul class="footer_menu">
+						<li><a href="/photos" class=""><i class="fa fa-angle-right"></i>&nbsp;&nbsp; Photography</a></li>
+						<li><a href="/all-videos-Travel Video" class=""><i class="fa fa-angle-right"></i>&nbsp;&nbsp; Travel Videos</a></li>
+						<li><a href="/all-posts-Blog Post" class=""><i class="fa fa-angle-right"></i>&nbsp;&nbsp; Blog</a></li>
+						<li><a href="/all-posts-Travel Story" class=""><i class="fa fa-angle-right"></i>&nbsp;&nbsp; Travel Stories</a></li>
+						<li><a href="/all-videos-Review" class=""><i class="fa fa-angle-right"></i>&nbsp;&nbsp; Review</a></li>
+						<li><a href="/all-posts-Travel Tip" class=""><i class="fa fa-angle-right"></i>&nbsp;&nbsp; Travel Tips</a></li>
+					</ul>
+					<!-- <% for(var i=0; i < Math.min(lastModified.length, 9); i++) { %>
 						<a href="/single-post-<%- lastModified[i].postType %>-<%- lastModified[i].slug %>-<%- lastModified[i]._id %>" class="footer_img_post_6"><img src="<%- lastModified[i].image %>" alt="img"/></a>
-					<% } %>
+					<% } %> -->
 				</div>
 			</div>
 			<div class="row justify-content-center pt-2 pb-4">
