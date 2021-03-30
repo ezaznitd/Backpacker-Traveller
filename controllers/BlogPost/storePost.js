@@ -11,7 +11,7 @@ module.exports = (req, res) => {
             postLanguage: req.session.language
         }, (error, post) => {
             if (post) {
-                req.flash('success', 'You have successfully created new post!');
+                req.flash('success', `You have successfully created new ${req.params.postType}!`);
                 res.redirect(`/single-post-${req.params.postType}-${post.slug}-${post._id}`);
             }
             else {

@@ -10,8 +10,6 @@ module.exports = async (req, res) => {
     }
     const query = {locationId: `${req.params.locationId}`};
     const posts = await ViewsCount.find({postType: 'Blog Post', postLanguage: req.session.language}).sort({createdAt: -1});
-    const lastModified = await ViewsCount.find({postType: 'Blog Post', postLanguage: req.session.language}).sort({updatedAt: -1});
-    const trending = await ViewsCount.find({postLanguage: req.session.language}).limit(6).sort({viewsCount: -1});
     const states = await State.find({});
     const NoOfPosts = await TravelPost.find({locationId: req.params.locationId}).countDocuments();
     var pageCount = NoOfPosts / 4;
@@ -25,8 +23,6 @@ module.exports = async (req, res) => {
                 travelPost,
                 posts,
                 locationId: req.params.locationId,
-                trending,
-                lastModified,
                 locationName: req.params.locationName,
                 stateName: req.params.stateName,
                 states,

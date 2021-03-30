@@ -7,7 +7,7 @@ module.exports = async (req, res) => {
             connectDB.databaseConnection;
             ViewsCount.findByIdAndDelete(req.params.id, (err, docs) => {
                 if(docs) {
-                    req.flash('success', 'You have successfully deleted the post!');
+                    req.flash('success', `You have successfully deleted the ${req.params.postType}!`);
                     res.redirect('/');
                 }
                 else {
@@ -17,12 +17,12 @@ module.exports = async (req, res) => {
             });
         }
         else {
-            req.flash('warning', 'You do not have the permission to delete the post!');
+            req.flash('warning', `You do not have the permission to delete the ${req.params.postType}!`);
             res.redirect(`/single-post-${req.params.postType}-${req.params.postTitle}-${req.params.id}`);
         }
     }
     else {
-        req.flash('warning', 'You are not logged in. Please logged in before delete the post!');
+        req.flash('warning', `You are not logged in. Please logged in before delete the ${req.params.postType}!`);
         res.redirect(`/single-post-${req.params.postType}-${req.params.postTitle}-${req.params.id}`);
     }
 }
