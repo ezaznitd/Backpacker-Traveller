@@ -28,6 +28,7 @@
     "mongoose-url-slugs": "^1.0.2",
     "multer": "^1.4.2",
     "node-popup": "^0.1.14",
+    "nodemailer": "^6.5.0",
     "pug": "^3.0.0",
     "showdown": "^1.9.1",
     "slugify": "^1.5.0",

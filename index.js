@@ -71,6 +71,10 @@ const storePhotoController = require('./controllers/PhotoCollection/storePhoto')
 const storeLocationController = require('./controllers/Location/storeLocation');
 const storeTravelPostController = require('./controllers/TravelPost/storeTravelPost');
 const changeLanguageController = require('./controllers/User/language');
+const resetUserPasswordController = require('./controllers/User/resetUserPassword');
+const resetPasswordController = require('./controllers/User/resetPassword');
+const newPasswordController = require('./controllers/User/newPassword');
+const updatePasswordController = require('./controllers/User/updatePassword');
 
 const storePost = require('./middleware/Post/storePost');
 const updatePost = require('./middleware/Post/updatePost');
@@ -195,6 +199,10 @@ app.post('/location/update-:stateName-:locationName-:locationId', updateLocation
 app.post('/travelPost/update-:stateName-:locationName-:postTitle-:postId', updateTravelPost, updateTravelPostController);
 app.post('/travelPhotographyTips/update-:id', updateTravelPhotographyTips, updateTravelPhotographyTipsController);
 app.get('/change-language', changeLanguageController);
+app.get('/reset-user-password', resetUserPasswordController);
+app.post('/reset-password', resetPasswordController);
+app.get('/new-password-:token', newPasswordController);
+app.post('/update/password-:token', updatePasswordController);
 
 const port = process.env.PORT || 4000;
 app.listen(port, () => {

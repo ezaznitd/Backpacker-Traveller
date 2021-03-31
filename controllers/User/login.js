@@ -12,6 +12,7 @@ module.exports = async (req, res) => {
     const states = await State.find({});
     res.render('login', {
         danger: req.flash('danger'),
+        info: req.flash('info'),
         lastModified,
         trending,
         states,

@@ -14,7 +14,9 @@ const UserSchema = new mongoose.Schema({
     password: {
         type: String,
         required: true
-    }
+    },
+    resetToken: String,
+    expireToken: Date
 })
  
 UserSchema.pre('save', function (next) {
