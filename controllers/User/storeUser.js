@@ -2,8 +2,7 @@ const User = require('../../database/models/User');
  
 module.exports = (req, res) => {
     if (req.session.userId) {
-        const registrationErrors = 'You are already logged in!';
-        req.flash('registrationErrors', registrationErrors);
+        req.flash('warning', 'You are already logged in!');
         res.redirect('/');
     }
     else {
@@ -16,19 +15,16 @@ module.exports = (req, res) => {
             email
         }, (error, user) => {
             if (user) {
-                const registrationErrors = 'This email has already been used!';
-                req.flash('registrationErrors', registrationErrors);
-                res.redirect('/auth-register');
+                req.flash('danger', 'This email has already been used!');
+                res.redirect('/auth-login');
             }
             else {
                 User.create(req.body, (error, user) => {
                     if(error) {
-                        const registrationErrors = 'You have entered wrong credential!';
-                        req.flash('registrationErrors', registrationErrors);
-                        res.redirect('/auth-register');
+                        req.flash('danger', 'You have entered wrong credential!');
+                        res.redirect('/auth-login');
                     }
-                    const registrationErrors = 'You have successfully registered!';
-                    req.flash('registrationErrors', registrationErrors);
+                    req.flash('success', 'You are successfully registered!');
                     res.redirect('/');
                 })
             }

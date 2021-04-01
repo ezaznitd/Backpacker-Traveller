@@ -5,14 +5,14 @@
         <div class="row">
             <div class="col-lg-8 col-md-10 mx-auto">
                 <div class="page-heading">
-                    <h1>Login / Register</h1>
+                    <h1 style="text-align: center;">Login / Register</h1><br>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<div class="container">
+<!-- <div class="container">
     <%if (danger.length > 0) { %>
         <div class="alert alert-danger alert-dismissible message">
             <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
@@ -45,6 +45,71 @@
                 </div>
             </form>
             <a href="/reset-user-password">forget password</a>
+        </div>
+    </div>
+</div> -->
+<div class="container">
+    <%if (danger.length > 0) { %>
+        <div class="alert alert-danger alert-dismissible message">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>Danger!</strong> <%- danger %>
+        </div>
+    <% } else if (info.length > 0) { %>
+        <div class="alert alert-info alert-dismissible message" style="text-align: center;">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>Info!</strong> <%- info %>
+        </div>
+    <% } %> 
+    <div class="row">
+        <div class="col-md-6 mx-auto p-0">
+            <div class="card">
+                <div class="login-box">
+                    <div class="login-snip"> <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Login</label> <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
+                        <div class="login-space">
+                            <div class="login">
+                                <form action="/users-login" method="POST" encType="multipart/form-data">
+                                    <div class="group">
+                                        <label for="user" class="label">Email</label>
+                                        <input type="email" name="email" class="input" placeholder="Enter your email">
+                                    </div>
+                                    <div class="group">
+                                        <label for="pass" class="label">Password</label>
+                                        <input type="password" name="password" class="input" data-type="password" placeholder="Enter your password">
+                                    </div>
+                                    <div class="group">
+                                        <input type="submit" class="button" value="Sign In">
+                                    </div>
+                                </form>
+                                <div class="hr"></div>
+                                <div class="foot">
+                                    <a href="/reset-user-password">Forgot Password?</a>
+                                </div>
+                            </div>
+                            <div class="sign-up-form">
+                                <form action="/users-register" method="POST" encType="multipart/form-data">
+                                    <div class="group">
+                                        <label for="user" class="label">Username</label>
+                                        <input type="text" name="username" class="input" placeholder="Create your Username">
+                                    </div>
+                                    <div class="group">
+                                        <label for="pass" class="label">Email Address</label>
+                                        <input type="email" name="email" class="input" placeholder="Enter your email address">
+                                    </div>
+                                    <div class="group">
+                                        <label for="pass" class="label">Password</label>
+                                        <input type="password" name="password" class="input" data-type="password" placeholder="Create your password">
+                                    </div>
+                                    <div class="group">
+                                        <input type="submit" class="button" value="Sign Up">
+                                    </div>
+                                </form>
+                                <!-- <div class="hr"></div> -->
+                                <div class="foot"> <label for="tab-1">Already Member?</label> </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
