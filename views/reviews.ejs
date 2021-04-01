@@ -28,6 +28,26 @@
                         </div>
                     </div>
                 <% } %>
+                <br>
+                <div style="text-align: center;">
+                    <% if (prevPage > 0) { %>
+                        <a href="/videos-<%- postType %>-<%- prevPage %>" class="btn_mange_pagging">Prev</a>
+                    <% } else { %>
+                        <a href="/videos-<%- postType %>-<%- currPageNo %>" class="btn_mange_pagging">Prev</a>
+                    <% } %>
+                    <% if (currPageNo == pageCount) { %>
+                        <a href="#" class="btn_pagging">...</a>
+                        <a href="/videos-<%- postType %>-<%- currPageNo %>" class="btn_pagging"><%- currPageNo %></a>
+                    <% } else { %>
+                        <a href="/videos-<%- postType %>-<%- currPageNo %>" class="btn_pagging"><%- currPageNo %></a>
+                        <a href="#" class="btn_pagging">...</a>
+                    <% } %>
+                    <% if (nextPage <= pageCount) { %>
+                        <a href="/videos-<%- postType %>-<%- nextPage %>" class="btn_mange_pagging">Next</a>
+                    <% } else { %>
+                        <a href="/videos-<%- postType %>-<%- currPageNo %>" class="btn_mange_pagging">Next</a>
+                    <% } %>
+                </div>
             </div>
             <div class="col-md-3 animate-box" data-animate-effect="fadeInRight">
                 <div>
@@ -51,39 +71,20 @@
                 <div>
                     <div class="fh5co_heading fh5co_heading_border_bottom pt-3 py-2 mb-4">Most Popular</div>
                 </div>
-                <% for(var i=0; i < Math.min(posts.length, 5); i++) { %>
+                <% for(var i=0; i < Math.min(trending.length, 5); i++) { %>
                     <div class="row pb-3">
                         <div class="col-5 align-self-center">
-                            <img src="<%- posts[i].image %>" alt="img" class="fh5co_most_trading"/>
+                            <img src="<%- trending[i].image %>" alt="img" class="fh5co_most_trading"/>
                         </div>
                         <div class="col-7 paddding">
-                            <div class="most_fh5co_treding_font"> <%- posts[i].title %>.</div>
-                            <div class="most_fh5co_treding_font_123"> <%- posts[i].createdAt.toDateString() %></div>
+                            <div class="most_fh5co_treding_font">
+                                <a href="/single-post-<%- trending[i].postType %>-<%- trending[i].slug %>-<%- trending[i]._id %>" class="fh5co_magna py-2"> <%- trending[i].title %></a>
+                            </div>
+                            <div class="most_fh5co_treding_font_123"> <i class="fa fa-clock-o"></i> <%- trending[i].createdAt.toDateString() %></div>
                         </div>
                     </div>
                 <% } %>
             </div>
-        </div>
-        <div class="row mx-0">
-            <div class="col-12 text-center pb-4 pt-4">
-                <% if (prevPage > 0) { %>
-                    <a href="/videos-<%- postType %>-<%- prevPage %>" class="btn_mange_pagging">Prev</a>
-                <% } else { %>
-                    <a href="/videos-<%- postType %>-<%- currPageNo %>" class="btn_mange_pagging">Prev</a>
-                <% } %>
-                <% if (currPageNo == pageCount) { %>
-                    <a href="#" class="btn_pagging">...</a>
-                    <a href="/videos-<%- postType %>-<%- currPageNo %>" class="btn_pagging"><%- currPageNo %></a>
-                <% } else { %>
-                    <a href="/videos-<%- postType %>-<%- currPageNo %>" class="btn_pagging"><%- currPageNo %></a>
-                    <a href="#" class="btn_pagging">...</a>
-                <% } %>
-                <% if (nextPage <= pageCount) { %>
-                    <a href="/videos-<%- postType %>-<%- nextPage %>" class="btn_mange_pagging">Next</a>
-                <% } else { %>
-                    <a href="/videos-<%- postType %>-<%- currPageNo %>" class="btn_mange_pagging">Next</a>
-                <% } %>
-             </div>
         </div>
     </div>
 </div>
@@ -91,16 +92,16 @@
 <div class="container-fluid pb-4 pt-5">
     <div class="container animate-box">
         <div>
-            <div class="fh5co_heading fh5co_heading_border_bottom py-2 mb-4">News</div>
+            <div class="fh5co_heading fh5co_heading_border_bottom py-2 mb-4">Last Modified</div>
         </div>
         <div class="owl-carousel owl-theme" id="slider2">
-            <% for(var i=0; i < Math.min(posts.length, 6); i++) { %>
+            <% for(var i=0; i < Math.min(lastModified.length, 6); i++) { %>
                 <div class="item px-2">
                     <div class="fh5co_hover_news_img">
-                        <div class="fh5co_news_img"><img src="<%- posts[i].image %>" alt=""/></div>
+                        <div class="fh5co_news_img"><img src="<%- lastModified[i].image %>" alt=""/></div>
                         <div>
-                            <a href="single.html" class="d-block fh5co_small_post_heading"><span class=""><%- posts[i].title %></span></a>
-                            <div class="c_g"><i class="fa fa-clock-o"></i> <%- posts[i].createdAt.toDateString() %></div>
+                            <a href="/single-post-<%- lastModified[i].postType %>-<%- lastModified[i].slug %>-<%- lastModified[i]._id %>" class="d-block fh5co_small_post_heading"><span class=""><%- lastModified[i].title %></span></a>
+                            <div class="c_g"><i class="fa fa-clock-o"></i> <%- lastModified[i].createdAt.toDateString() %></div>
                         </div>
                     </div>
                 </div>

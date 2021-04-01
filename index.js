@@ -22,7 +22,6 @@ const locationController = require('./controllers/Location/locations');
 const getTravelPhotographyTipsController = require('./controllers/Photography/travelPhotographyTips');
 const getBestTravelCameraController = require('./controllers/Photography/travelPhotographyTips');
 const getMyPhotoGearController = require('./controllers/Photography/travelPhotographyTips');
-const createUserController = require('./controllers/User/createUser');
 const storeUserController = require('./controllers/User/storeUser');
 const loginController = require('./controllers/User/login');
 const logoutController = require('./controllers/User/logout');
@@ -175,7 +174,6 @@ app.post('/travelPost/store-:stateName-:locationName-:locationId', storeTravelPo
 app.get('/auth-login', loginController);
 app.get('/auth-logout', logoutController);
 app.post('/users-login', loginUserController);
-app.get('/auth-register', createUserController);
 app.post('/users-register', storeUserController);
 app.get('/delete-post-:postType-:postTitle-:id', deletePostController);
 app.get('/delete-video-:postType-:postTitle-:id', deleteReviewController);

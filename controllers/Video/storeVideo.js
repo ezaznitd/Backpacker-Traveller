@@ -9,7 +9,7 @@ module.exports = (req, res) => {
             postLanguage: req.session.language
         }, (error, post) => {
             if (post) {
-                req.flash('success', 'You have successfully created new Review Post!');
+                req.flash('success', `You have successfully created new ${req.params.postType} Post!`);
                 res.redirect(`/single-video-${req.params.postType}-${post.slug}-${post._id}`);
             }
             else {

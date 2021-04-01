@@ -24,27 +24,27 @@ module.exports = async (req, res) => {
                 }
                 Video.findByIdAndUpdate(req.params.id, newPost, (error, post) => {
                     if (post) {
-                        req.flash('info', 'You have successfully updated the review!');
+                        req.flash('info', `You have successfully updated the ${req.params.postType}!`);
                         res.redirect(`/single-video-${req.params.postType}-${post.slug}-${req.params.id}`);
                     }
                     else {
-                        req.flash('warning', 'Some error occure during updating your post please try again after some time!');
+                        req.flash('warning', `Some error occure during updating your ${req.params.postType} please try again after some time!`);
                         res.redirect(`/single-video-${req.params.postType}-${req.params.slug}-${req.params.id}`);
                     }
                 });
             }
             catch (err) {
-                req.flash('warning', 'Some error occure during updating your post please try again after some time!');
+                req.flash('warning', `Some error occure during updating your ${req.params.postType} please try again after some time!`);
                 res.redirect(`/single-video-${req.params.postType}-${req.params.slug}-${req.params.id}`);
             }
         }
         else {
-            req.flash('warning', 'You do not have the permission to update a post!');
+            req.flash('warning', `You do not have the permission to update a ${req.params.postType}!`);
             res.redirect(`/single-video-${req.params.postType}-${req.params.slug}-${req.params.id}`);
         }
     }
     else {
-        req.flash('warning', 'Please log in before updating a post!');
+        req.flash('warning', `Please log in before updating a ${req.params.postType}!`);
         res.redirect(`/single-video-${req.params.postType}-${req.params.slug}-${req.params.id}`);
     }
 }

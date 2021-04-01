@@ -9,13 +9,15 @@ module.exports = async (req, res) => {
         req.session.language = 'english';
     }
     const reviews = await Video.find({postType: req.params.postType, postLanguage: req.session.language}).sort({createdAt: -1});
-    const posts = await ViewsCount.find({postType: 'Blog Post', postLanguage: req.session.language}).sort({createdAt: -1});
+    const lastModified = await ViewsCount.find({postLanguage: req.session.language}).limit(6).sort({updatedAt: -1});
+    const trending = await ViewsCount.find({postLanguage: req.session.language}).limit(5).sort({viewsCount: -1});
     const states = await State.find({});
     const NoOfPosts = await Video.find({postType: req.params.postType, postLanguage: req.session.language}).countDocuments();
     var pageCount = NoOfPosts / 4;
     res.render('reviews', {
         reviews,
-        posts,
+        lastModified,
+        trending,
         postType: req.params.postType,
         states,
         dateTime: new Date().toDateString(),

@@ -29,23 +29,23 @@
                 <% } %>
                 <br>
                 <div style="text-align: center;">
-                <% if (prevPage > 0) { %>
-                    <a href="/posts-<%- postType %>-<%- prevPage %>" class="btn_mange_pagging">Prev</a>
-                <% } else { %>
-                    <a href="/posts-<%- postType %>-<%- currPageNo %>" class="btn_mange_pagging">Prev</a>
-                <% } %>
-                <% if (currPageNo == pageCount) { %>
-                    <a href="#" class="btn_pagging">...</a>
-                    <a href="/posts-<%- postType %>-<%- currPageNo %>" class="btn_pagging"><%- currPageNo %></a>
-                <% } else { %>
-                    <a href="/posts-<%- postType %>-<%- currPageNo %>" class="btn_pagging"><%- currPageNo %></a>
-                    <a href="#" class="btn_pagging">...</a>
-                <% } %>
-                <% if (nextPage <= pageCount) { %>
-                    <a href="/posts-<%- postType %>-<%- nextPage %>" class="btn_mange_pagging">Next</a>
-                <% } else { %>
-                    <a href="/posts-<%- postType %>-<%- currPageNo %>" class="btn_mange_pagging">Next</a>
-                <% } %>
+                    <% if (prevPage > 0) { %>
+                        <a href="/posts-<%- postType %>-<%- prevPage %>" class="btn_mange_pagging">Prev</a>
+                    <% } else { %>
+                        <a href="/posts-<%- postType %>-<%- currPageNo %>" class="btn_mange_pagging">Prev</a>
+                    <% } %>
+                    <% if (currPageNo == pageCount) { %>
+                        <a href="#" class="btn_pagging">...</a>
+                        <a href="/posts-<%- postType %>-<%- currPageNo %>" class="btn_pagging"><%- currPageNo %></a>
+                    <% } else { %>
+                        <a href="/posts-<%- postType %>-<%- currPageNo %>" class="btn_pagging"><%- currPageNo %></a>
+                        <a href="#" class="btn_pagging">...</a>
+                    <% } %>
+                    <% if (nextPage <= pageCount) { %>
+                        <a href="/posts-<%- postType %>-<%- nextPage %>" class="btn_mange_pagging">Next</a>
+                    <% } else { %>
+                        <a href="/posts-<%- postType %>-<%- currPageNo %>" class="btn_mange_pagging">Next</a>
+                    <% } %>
                 </div>
             </div>
             <div class="col-md-3 animate-box" data-animate-effect="fadeInRight">
