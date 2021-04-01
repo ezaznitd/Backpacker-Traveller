@@ -8,24 +8,24 @@
 <meta name="author" content="">
 
 <title>One Life One Dream</title>
-<link rel="icon" href="img/icon.png" type="image/icon type">
+<link rel="icon" href="/img/icon.png" type="image/icon type">
 
-<link href="css/media_query.css" rel="stylesheet" type="text/css"/>
-<link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
+<link href="/css/media_query.css" rel="stylesheet" type="text/css"/>
+<link href="/css/bootstrap.css" rel="stylesheet" type="text/css"/>
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
 		integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-<link href="css/animate.css" rel="stylesheet" type="text/css"/>
+<link href="/css/animate.css" rel="stylesheet" type="text/css"/>
 <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
-<link href="css/owl.carousel.css" rel="stylesheet" type="text/css"/>
-<link href="css/owl.theme.default.css" rel="stylesheet" type="text/css"/>
+<link href="/css/owl.carousel.css" rel="stylesheet" type="text/css"/>
+<link href="/css/owl.theme.default.css" rel="stylesheet" type="text/css"/>
 <!-- Bootstrap CSS -->
-<link href="css/style_1.css" rel="stylesheet" type="text/css"/>
+<link href="/css/style_1.css" rel="stylesheet" type="text/css"/>
 <!-- Photography Section -->
-<link href="css/baker.css" rel="stylesheet" type="text/css"/>
-<link href="css/login.css" rel="stylesheet" type="text/css"/>
+<link href="/css/baker.css" rel="stylesheet" type="text/css"/>
+<link href="/css/login.css" rel="stylesheet" type="text/css"/>
 <!-- Photography Section -->
 <!-- Modernizr JS -->
-<script src="js/modernizr-3.5.0.min.js"></script>
+<script src="/js/modernizr-3.5.0.min.js"></script>
 
 <!-- Text Editor -->
 <strong><script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script></strong>
@@ -112,11 +112,11 @@
 				<div class="col-12 fh5co_mediya_center"><a href="#" class="color_fff fh5co_mediya_setting"><i
 						class="fa fa-clock-o" id="date-time"></i>&nbsp;&nbsp;&nbsp;<%- dateTime %></a>
 					<% if (language == 'bengali') { %>
-						<div class="d-inline-block fh5co_trading_posotion_relative"><a href="/change-language" class="treding_btn"><strong>ENGLISH</strong></a>
+						<div class="d-inline-block fh5co_trading_posotion_relative"><a href="/change/language/" class="treding_btn"><strong>ENGLISH</strong></a>
 							<div class="fh5co_treding_position_absolute"></div>
 						</div>
 					<% } else{ %>
-						<div class="d-inline-block fh5co_trading_posotion_relative"><a href="/change-language" class="treding_btn">বাংলা</a>
+						<div class="d-inline-block fh5co_trading_posotion_relative"><a href="/change/language/" class="treding_btn">বাংলা</a>
 							<div class="fh5co_treding_position_absolute"></div>
 						</div>
 					<% } %>
@@ -128,7 +128,7 @@
 		<div class="container">
 			<div class="row" style="width: 100%; height: 350px;">
 				<div class="col-12 col-md-3 fh5co_padding_menu">
-					<img src="img/logo.png" alt="img" class="fh5co_logo_width"/>
+					<img src="/img/logo.png" alt="img" class="fh5co_logo_width"/>
 				</div>
 				<!-- <div class="col-12 col-md-9 align-self-center fh5co_mediya_right">
 					<div class="text-center d-inline-block">
@@ -174,15 +174,15 @@
 								<a class="nav-link" href="/">HOME<span class="sr-only">(current)</span></a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="/all-posts-Blog Post">BLOG<span class="sr-only">(current)</span></a>
+								<a class="nav-link" href="/all/posts/Blog Post/">BLOG<span class="sr-only">(current)</span></a>
 							</li>
 							<li class="nav-item dropdown">
 								<a class="nav-link dropdown-toggle" href="#" id="dropdownMenuButton2" data-toggle="dropdown"
 								aria-haspopup="true" aria-expanded="false">TRAVEL<span class="sr-only">(current)</span></a>
 								<div class="dropdown-menu" aria-labelledby="dropdownMenuLink_1">
-									<a class="dropdown-item" href="/all-posts-Travel Story">TRAVEL STORIES</a>
-									<a class="dropdown-item" href="/all-posts-Travel Tip">TRAVEL TIPS</a>
-									<a class="dropdown-item" href="/all-visitedStates">VISITED STATES</a>
+									<a class="dropdown-item" href="/all/posts/Travel Story/">TRAVEL STORIES</a>
+									<a class="dropdown-item" href="/all/posts/Travel Tip/">TRAVEL TIPS</a>
+									<a class="dropdown-item" href="/all/visitedStates/">VISITED STATES</a>
 								</div>
 							</li>
 							<li class="nav-item dropdown">
@@ -190,24 +190,24 @@
 								aria-haspopup="true" aria-expanded="false">DESTINATIONS<span class="sr-only">(current)</span></a>
 								<div class="dropdown-menu" aria-labelledby="dropdownMenuLink_1">
 									<% for(var i=0; i < states.length; i++) { %>
-										<a class="dropdown-item" href="/<%- states[i].name %>-all-locations-<%- states[i]._id %>"><%- states[i].name %></a>
+										<a class="dropdown-item" href="/<%- states[i].name %>/all/locations/<%- states[i]._id %>/"><%- states[i].name %></a>
 									<% } %>
 								</div>
 							</li>
 							<li class="nav-item ">
-								<a class="nav-link" href="/all-videos-Review">REVIEWS<span class="sr-only">(current)</span></a>
+								<a class="nav-link" href="/all/videos/Review/">REVIEWS<span class="sr-only">(current)</span></a>
 							</li>
 							<li class="nav-item ">
-								<a class="nav-link" href="/all-videos-Travel Video">VIDEOS<span class="sr-only">(current)</span></a>
+								<a class="nav-link" href="/all/videos/Travel Video/">VIDEOS<span class="sr-only">(current)</span></a>
 							</li>
 							<li class="nav-item dropdown">
 								<a class="nav-link dropdown-toggle" href="#" id="dropdownMenuButton2" data-toggle="dropdown"
 								aria-haspopup="true" aria-expanded="false">PHOTOGRAPHY<span class="sr-only">(current)</span></a>
 								<div class="dropdown-menu" aria-labelledby="dropdownMenuLink_1">
-									<a class="dropdown-item" href="/travel-photography-tips-60534749775cb32b2bc6f96f">TAKE BETTER PHOTOS</a>
-									<a class="dropdown-item" href="/best-travel-camera-6053495d775cb32b2bc6f970">BEST TRAVEL CAMERAS</a>
-									<a class="dropdown-item" href="/my-photo-gear-60534bae72fd9c2feb14e3e2">MY PHOTO GEAR</a>
-									<a class="dropdown-item" href="/photos">BEST PHOTO COLLECTIONS</a>
+									<a class="dropdown-item" href="/travel-photography-tips/60534749775cb32b2bc6f96f/">TAKE BETTER PHOTOS</a>
+									<a class="dropdown-item" href="/best-travel-camera/6053495d775cb32b2bc6f970/">BEST TRAVEL CAMERAS</a>
+									<a class="dropdown-item" href="/my-photo-gear/60534bae72fd9c2feb14e3e2/">MY PHOTO GEAR</a>
+									<a class="dropdown-item" href="/photos/">BEST PHOTO COLLECTIONS</a>
 								</div>
 							</li>
 							<!-- <%if (!auth) { %>
@@ -322,19 +322,19 @@
 					<div class="footer_main_title py-3"> Destination</div>
 					<ul class="footer_menu">
 						<% for(var i=0; i < Math.min(states.length, 5); i++) { %>
-							<li><a href="/<%- states[i].name %>-all-locations-<%- states[i]._id %>" class=""><i class="fa fa-angle-right"></i>&nbsp;&nbsp; <%- states[i].name %></a></li>
+							<li><a href="/<%- states[i].name %>/all/locations/<%- states[i]._id %>/" class=""><i class="fa fa-angle-right"></i>&nbsp;&nbsp; <%- states[i].name %></a></li>
 						<% } %>
 					</ul>
 				</div>
 				<div class="col-12 col-md-5 col-lg-3 position_footer_relative ">
 					<div class="footer_main_title py-3"> Quick Link</div>
 					<ul class="footer_menu">
-						<li><a href="/photos" class=""><i class="fa fa-angle-right"></i>&nbsp;&nbsp; Photography</a></li>
-						<li><a href="/all-videos-Travel Video" class=""><i class="fa fa-angle-right"></i>&nbsp;&nbsp; Travel Videos</a></li>
-						<li><a href="/all-posts-Blog Post" class=""><i class="fa fa-angle-right"></i>&nbsp;&nbsp; Blog</a></li>
-						<li><a href="/all-posts-Travel Story" class=""><i class="fa fa-angle-right"></i>&nbsp;&nbsp; Travel Stories</a></li>
-						<li><a href="/all-videos-Review" class=""><i class="fa fa-angle-right"></i>&nbsp;&nbsp; Review</a></li>
-						<li><a href="/all-posts-Travel Tip" class=""><i class="fa fa-angle-right"></i>&nbsp;&nbsp; Travel Tips</a></li>
+						<li><a href="/photos/" class=""><i class="fa fa-angle-right"></i>&nbsp;&nbsp; Photography</a></li>
+						<li><a href="/all/videos/Travel Video/" class=""><i class="fa fa-angle-right"></i>&nbsp;&nbsp; Travel Videos</a></li>
+						<li><a href="/all/posts/Blog Post/" class=""><i class="fa fa-angle-right"></i>&nbsp;&nbsp; Blog</a></li>
+						<li><a href="/all/posts/Travel Story/" class=""><i class="fa fa-angle-right"></i>&nbsp;&nbsp; Travel Stories</a></li>
+						<li><a href="/all/videos/Review/" class=""><i class="fa fa-angle-right"></i>&nbsp;&nbsp; Review</a></li>
+						<li><a href="/all/posts/Travel Tip/" class=""><i class="fa fa-angle-right"></i>&nbsp;&nbsp; Travel Tips</a></li>
 					</ul>
 				</div>
 			</div>
@@ -355,8 +355,8 @@
 				<div class="col-12 col-md-6 py-4 Reserved"> © Copyright 2021, All rights reserved. Design by <a href="https://freehtml5.co" title="Free HTML5 Bootstrap templates">Ezaz Hossain</a>. </div>
 				<div class="col-12 col-md-6 spdp_right py-4">
 					<a href="/" class="footer_last_part_menu">Home</a>
-					<a href="/about" class="footer_last_part_menu">About</a>
-					<a href="/contact" class="footer_last_part_menu">Contact</a>
+					<a href="/about/" class="footer_last_part_menu">About</a>
+					<a href="/contact/" class="footer_last_part_menu">Contact</a>
 					<a href="#" class="footer_last_part_menu">Privacy Policy</a>
 					<a href="#" class="footer_last_part_menu">FAQ</a>
 					<a href="#" class="footer_last_part_menu">Terms of Service</a>
@@ -370,7 +370,7 @@
 	</div>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<script src="js/owl.carousel.min.js"></script>
+	<script src="/js/owl.carousel.min.js"></script>
 	<!--<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>-->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
 			integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
@@ -379,9 +379,9 @@
 			integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
 			crossorigin="anonymous"></script>
 	<!-- Waypoints -->
-	<script src="js/jquery.waypoints.min.js"></script>
+	<script src="/js/jquery.waypoints.min.js"></script>
 	<!-- Main -->
-	<script src="js/main.js"></script>
+	<script src="/js/main.js"></script>
 </body>
 
 </html>

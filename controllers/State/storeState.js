@@ -8,16 +8,16 @@ module.exports = (req, res) => {
         }, (error, post) => {
             if (post) {
                 req.flash('success', 'You have successfully created new State!');
-                res.redirect(`/${post.name}-all-locations-${post._id}`);
+                res.redirect(`/${post.name}/all/locations/${post._id}/`);
             }
             else {
                 req.flash('warning', 'Some error occure. Please try again later!');
-                res.redirect("/new-state");
+                res.redirect("/new/state/");
             }
         });
     }
     catch (err) {
         req.flash('warning', 'Some error occure. Please try again later!');
-        res.redirect('/new-state');
+        res.redirect('/new/state/');
     }
 }

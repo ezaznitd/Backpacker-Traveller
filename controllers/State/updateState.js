@@ -25,26 +25,26 @@ module.exports = async (req, res) => {
                 State.findByIdAndUpdate(req.params.stateId, newPost, (error, post) => {
                     if (post) {
                         req.flash('info', 'You have successfully updated the state!');
-                        res.redirect(`/${req.params.stateName}-all-locations-${req.params.stateId}`);
+                        res.redirect(`/${req.params.stateName}/all/locations/${req.params.stateId}/`);
                     }
                     else {
                         req.flash('warning', 'Some error occure during updating your post please try again after some time!');
-                        res.redirect(`/${req.params.stateName}-all-locations-${req.params.stateId}`);
+                        res.redirect(`/${req.params.stateName}/all/locations/${req.params.stateId}/`);
                     }
                 });
             }
             catch (err) {
                 req.flash('warning', 'Some error occure during updating your post please try again after some time!');
-                res.redirect(`/${req.params.stateName}-all-locations-${req.params.stateId}`);
+                res.redirect(`/${req.params.stateName}/all/locations/${req.params.stateId}/`);
             }
         }
         else {
             req.flash('warning', 'You do not have the permission to update a post!');
-            res.redirect(`/${req.params.stateName}-all-locations-${req.params.stateId}`);
+            res.redirect(`/${req.params.stateName}/all/locations/${req.params.stateId}/`);
         }
     }
     else {
         req.flash('warning', 'Please log in before updating a post!');
-        res.redirect(`/${req.params.stateName}-all-locations-${req.params.stateId}`);
+        res.redirect(`/${req.params.stateName}/all/locations/${req.params.stateId}/`);
     }
 }

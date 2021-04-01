@@ -12,17 +12,17 @@ module.exports = async (req, res) => {
                 }
                 else {
                     req.flash('warning', 'Some error occure. Please try again later!');
-                    res.redirect(`/${req.params.stateName}-${req.params.locationName}-single-travelPost-${post.slug}-${post._id}`);
+                    res.redirect(`/${req.params.stateName}/${req.params.locationName}/travelPost/${post.slug}/${post._id}/`);
                 }
             });
         }
         else {
             req.flash('warning', 'You do not have the permission to delete the post!');
-            res.redirect(`/${req.params.stateName}-${req.params.locationName}-single-travelPost-${post.slug}-${post._id}`);
+            res.redirect(`/${req.params.stateName}/${req.params.locationName}/travelPost/${post.slug}/${post._id}/`);
         }
     }
     else {
         req.flash('warning', 'You are not logged in. Please logged in before delete the post!');
-        res.redirect(`/${req.params.stateName}-${req.params.locationName}-single-travelPost-${post.slug}-${post._id}`);
+        res.redirect(`/${req.params.stateName}/${req.params.locationName}/travelPost/${post.slug}/${post._id}/`);
     }
 }

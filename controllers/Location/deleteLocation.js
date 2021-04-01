@@ -12,7 +12,7 @@ module.exports = async (req, res) => {
                     for (var i = 0; i < post.length; i++) {
                         TravelPost.findByIdAndDelete(post[i]._id, (err2, sol) => {
                             if (err2) {
-                                res.redirect(`/${req.params.stateName}-${post.name}-all-travelPosts-${req.params.locationId}`);
+                                res.redirect(`/${req.params.stateName}/${post.name}/all/travelPosts/${req.params.locationId}/`);
                             }
                         });
                     }
@@ -23,23 +23,23 @@ module.exports = async (req, res) => {
                         }
                         else {
                             req.flash('warning', 'Some error occure. Please try again later!');
-                            res.redirect(`/${req.params.stateName}-${post.name}-all-travelPosts-${req.params.locationId}`);
+                            res.redirect(`/${req.params.stateName}/${post.name}/all/travelPosts/${req.params.locationId}/`);
                         }
                     })
                 }
                 else {
                     req.flash('warning', 'Some error occure. Please try again later!');
-                    res.redirect(`/${req.params.stateName}-${post.name}-all-travelPosts-${req.params.locationId}`);
+                    res.redirect(`/${req.params.stateName}/${post.name}/all/travelPosts/${req.params.locationId}/`);
                 }
             })
         }
         else {
             req.flash('warning', 'You do not have the permission to delete the post!');
-            res.redirect(`/${req.params.stateName}-${post.name}-all-travelPosts-${req.params.locationId}`);
+            res.redirect(`/${req.params.stateName}/${post.name}/all/travelPosts/${req.params.locationId}/`);
         }
     }
     else {
         req.flash('warning', 'You are not logged in. Please logged in before delete the post!');
-        res.redirect(`/${req.params.stateName}-${post.name}-all-travelPosts-${req.params.locationId}`);
+        res.redirect(`/${req.params.stateName}/${post.name}/all/travelPosts/${req.params.locationId}/`);
     }
 }

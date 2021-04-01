@@ -1,27 +1,27 @@
 module.exports = (req, res, next) => {
     if (!req.body.image) {
         req.flash('danger', 'Please enter the image url!');
-        return res.redirect(`/new-post-${req.params.postType}`);
+        return res.redirect(`/new/post/${req.params.postType}/`);
     }
     else if (!req.body.username) {
         req.flash('danger', 'Please enter the username!');
-        return res.redirect(`/new-post-${req.params.postType}`);
+        return res.redirect(`/new/post/${req.params.postType}/`);
     }
     else if (!req.body.title) {
         req.flash('danger', 'Please enter the title!');
-        return res.redirect(`/new-post-${req.params.postType}`);
+        return res.redirect(`/new/post/${req.params.postType}/`);
     }
     else if (!req.body.description) {
         req.flash('danger', 'Please enter the description!');
-        return res.redirect(`/new-post-${req.params.postType}`);
+        return res.redirect(`/new/post/${req.params.postType}/`);
     }
     else if (!req.body.content) {
         req.flash('danger', 'Please enter the content!');
-        return res.redirect(`/new-post-${req.params.postType}`);
+        return res.redirect(`/new/post/${req.params.postType}/`);
     }
     else if (!req.body.slug) {
         req.flash('danger', 'Please enter the slug');
-        return res.redirect(`/new-post-${req.params.postType}`);
+        return res.redirect(`/new/post/${req.params.postType}/`);
     }
     else {
         const str = req.body.slug;
@@ -40,7 +40,7 @@ module.exports = (req, res, next) => {
             }
             else {
                 req.flash('danger', 'Please check the slug!');
-                return res.redirect(`/new-post-${req.params.postType}`);
+                return res.redirect(`/new/post/${req.params.postType}/`);
             }
         }
     }

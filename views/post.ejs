@@ -1,7 +1,7 @@
 <%if (auth=='600c0f0fbc4b391f0135065e') { %>
     <div class="editPost">
-        <a href="/get-post-<%= post.postType %>-<%= post.title %>-<%= post._id %>" ><i class="fa fa-pencil-square-o"></i></a>
-        <a href="/delete-post-<%= post.postType %>-<%= post.title %>-<%= post._id %>" onclick="return confirm('Are you sure you want to delete this post?');"><i class="fa fa-trash"></i></a>
+        <a href="/get/post/<%= post.postType %>/<%= post.title %>/<%= post._id %>/" ><i class="fa fa-pencil-square-o"></i></a>
+        <a href="/delete/post/<%= post.postType %>/<%= post.title %>/<%= post._id %>/" onclick="return confirm('Are you sure you want to delete this post?');"><i class="fa fa-trash"></i></a>
     </div>
     <br><br>
 <% } %>

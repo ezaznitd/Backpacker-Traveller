@@ -26,14 +26,14 @@ module.exports = (req, res) => {
                     } else {
                         const danger = 'You have entered wrong password!';
                         req.flash('danger', danger);
-                        res.redirect('/auth-login')
+                        res.redirect('/auth/login/')
                     }
                 })
             }
             else {
                 const danger = 'You have entered wrong email';
                 req.flash('danger', danger)
-                res.redirect('/auth-login')
+                res.redirect('/auth/login/')
             }
         })
     }

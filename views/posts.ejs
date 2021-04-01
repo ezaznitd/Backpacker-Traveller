@@ -1,6 +1,6 @@
 <%if (auth=='600c0f0fbc4b391f0135065e') { %>
     <div class="editPost">
-        <a href="/new-post-<%- postType %>" ><i class="fa fa-plus"></i></a>
+        <a href="/new-post/<%- postType %>/" ><i class="fa fa-plus"></i></a>
     </div>
     <br><br>
 <% } %>
@@ -20,7 +20,7 @@
                             </div>
                         </div>
                         <div class="col-md-7 animate-box">
-                            <a href="/single-post-<%- posts[i].postType %>-<%- posts[i].slug %>-<%- posts[i]._id %>" class="fh5co_magna py-2"> <%- posts[i].title %></a><br>
+                            <a href="/post/<%- posts[i].postType %>/<%- posts[i].slug %>/<%- posts[i]._id %>/" class="fh5co_magna py-2"> <%- posts[i].title %></a><br>
                             <a href="#" class="fh5co_mini_time py-3"> <%- posts[i].username %></a>
                             on <i class="fa fa-clock-o"></i> <%- posts[i].createdAt.toDateString() %>
                             <div class="fh5co_consectetur"><%- posts[i].description %></div>
@@ -30,21 +30,21 @@
                 <br>
                 <div style="text-align: center;">
                     <% if (prevPage > 0) { %>
-                        <a href="/posts-<%- postType %>-<%- prevPage %>" class="btn_mange_pagging">Prev</a>
+                        <a href="/posts/<%- postType %>/<%- prevPage %>/" class="btn_mange_pagging">Prev</a>
                     <% } else { %>
-                        <a href="/posts-<%- postType %>-<%- currPageNo %>" class="btn_mange_pagging">Prev</a>
+                        <a href="/posts/<%- postType %>/<%- currPageNo %>/" class="btn_mange_pagging">Prev</a>
                     <% } %>
                     <% if (currPageNo == pageCount) { %>
                         <a href="#" class="btn_pagging">...</a>
-                        <a href="/posts-<%- postType %>-<%- currPageNo %>" class="btn_pagging"><%- currPageNo %></a>
+                        <a href="/posts/<%- postType %>/<%- currPageNo %>/" class="btn_pagging"><%- currPageNo %></a>
                     <% } else { %>
-                        <a href="/posts-<%- postType %>-<%- currPageNo %>" class="btn_pagging"><%- currPageNo %></a>
+                        <a href="/posts/<%- postType %>/<%- currPageNo %>/" class="btn_pagging"><%- currPageNo %></a>
                         <a href="#" class="btn_pagging">...</a>
                     <% } %>
                     <% if (nextPage <= pageCount) { %>
-                        <a href="/posts-<%- postType %>-<%- nextPage %>" class="btn_mange_pagging">Next</a>
+                        <a href="/posts/<%- postType %>/<%- nextPage %>/" class="btn_mange_pagging">Next</a>
                     <% } else { %>
-                        <a href="/posts-<%- postType %>-<%- currPageNo %>" class="btn_mange_pagging">Next</a>
+                        <a href="/posts/<%- postType %>/<%- currPageNo %>/" class="btn_mange_pagging">Next</a>
                     <% } %>
                 </div>
             </div>
@@ -54,13 +54,13 @@
                 </div>
                 <div class="clearfix"></div>
                 <div class="fh5co_tags_all">
-                    <a href="/all-posts-Blog Post" class="fh5co_tagg">Blog</a>
+                    <a href="/all/posts/Blog Post/" class="fh5co_tagg">Blog</a>
                     <a href="#" class="fh5co_tagg">Technology</a>
                     <a href="/travel-photography-tips-60534749775cb32b2bc6f96f" class="fh5co_tagg">Photographer Tips</a>
-                    <a href="/all-posts-Travel Story" class="fh5co_tagg">Travel Story</a>
+                    <a href="/all/posts/Travel Story/" class="fh5co_tagg">Travel Story</a>
                     <a href="#" class="fh5co_tagg">Art</a>
                     <a href="#" class="fh5co_tagg">Lifestyle</a>
-                    <a href="/all-posts-Travel Tip" class="fh5co_tagg">Travel Tips</a>
+                    <a href="/all/posts/Travel Tip/" class="fh5co_tagg">Travel Tips</a>
                     <a href="#" class="fh5co_tagg">Social</a>
                     <a href="/best-travel-camera-6053495d775cb32b2bc6f970" class="fh5co_tagg">Best Camera</a>
                     <a href="/all-videos-Review" class="fh5co_tagg">Review</a>
@@ -78,7 +78,7 @@
                         </div>
                         <div class="col-7 paddding">
                             <div class="most_fh5co_treding_font">
-                                <a href="/single-post-<%- trending[i].postType %>-<%- trending[i].slug %>-<%- trending[i]._id %>" class="fh5co_magna py-2"> <%- trending[i].title %></a>
+                                <a href="/post/<%- trending[i].postType %>/<%- trending[i].slug %>/<%- trending[i]._id %>/" class="fh5co_magna py-2"> <%- trending[i].title %></a>
                             </div>
                             <div class="most_fh5co_treding_font_123"> <i class="fa fa-clock-o"></i> <%- trending[i].createdAt.toDateString() %></div>
                         </div>
@@ -100,7 +100,7 @@
                     <div class="fh5co_hover_news_img">
                         <div class="fh5co_news_img"><img src="<%- lastModified[i].image %>" alt=""/></div>
                         <div>
-                            <a href="/single-post-<%- lastModified[i].postType %>-<%- lastModified[i].slug %>-<%- lastModified[i]._id %>" class="d-block fh5co_small_post_heading"><span class=""><%- lastModified[i].title %></span></a>
+                            <a href="/post/<%- lastModified[i].postType %>/<%- lastModified[i].slug %>/<%- lastModified[i]._id %>/" class="d-block fh5co_small_post_heading"><span class=""><%- lastModified[i].title %></span></a>
                             <div class="c_g"><i class="fa fa-clock-o"></i> <%- lastModified[i].createdAt.toDateString() %></div>
                         </div>
                     </div>

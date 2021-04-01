@@ -25,26 +25,26 @@ module.exports = async (req, res) => {
                 TravelPost.findByIdAndUpdate(req.params.postId, newPost, (error, post) => {
                     if (post) {
                         req.flash('info', 'You have successfully updated the location!');
-                        res.redirect(`/${req.params.stateName}-${req.params.locationName}-single-travelPost-${post.slug}-${post._id}`);
+                        res.redirect(`/${req.params.stateName}/${req.params.locationName}/travelPost/${post.slug}/${post._id}/`);
                     }
                     else {
                         req.flash('warning', 'Some error occure during updating your post please try again after some time!');
-                        res.redirect(`/${req.params.stateName}-${req.params.locationName}-single-travelPost-${post.slug}-${post._id}`);
+                        res.redirect(`/${req.params.stateName}/${req.params.locationName}/travelPost/${post.slug}/${post._id}/`);
                     }
                 });
             }
             catch (err) {
                 req.flash('warning', 'Some error occure during updating your post please try again after some time!');
-                res.redirect(`/${req.params.stateName}-${req.params.locationName}-single-travelPost-${post.slug}-${post._id}`);
+                res.redirect(`/${req.params.stateName}/${req.params.locationName}/travelPost/${post.slug}/${post._id}/`);
             }
         }
         else {
             req.flash('warning', 'You do not have the permission to update a post!');
-            res.redirect(`/${req.params.stateName}-${req.params.locationName}-single-travelPost-${post.slug}-${post._id}`);
+            res.redirect(`/${req.params.stateName}/${req.params.locationName}/travelPost/${post.slug}/${post._id}/`);
         }
     }
     else {
         req.flash('warning', 'Please log in before updating a post!');
-        res.redirect(`/${req.params.stateName}-${req.params.locationName}-single-travelPost-${post.slug}-${post._id}`);
+        res.redirect(`/${req.params.stateName}/${req.params.locationName}/travelPost/${post.slug}/${post._id}/`);
     }
 }

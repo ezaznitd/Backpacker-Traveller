@@ -1,8 +1,8 @@
 <%if (auth=='600c0f0fbc4b391f0135065e') { %>
     <div class="editPost">
-        <a href="/new-location-<%= stateName %>-<%= stateId %>" ><i class="fa fa-plus"></i></a>
-        <a href="/get-state-<%= stateName %>-<%= stateId %>" ><i class="fa fa-pencil-square-o"></i></a>
-        <a href="/delete-state-<%= stateName %>-<%= stateId %>" onclick="return confirm('Are you sure you want to delete this post?');"><i class="fa fa-trash"></i></a>
+        <a href="/new/location/<%= stateName %>/<%= stateId %>/" ><i class="fa fa-plus"></i></a>
+        <a href="/get/state/<%= stateName %>/<%= stateId %>/" ><i class="fa fa-pencil-square-o"></i></a>
+        <a href="/delete/state/<%= stateName %>/<%= stateId %>/" onclick="return confirm('Are you sure you want to delete this post?');"><i class="fa fa-trash"></i></a>
     </div>
     <br><br>
 <% } %>
@@ -20,7 +20,7 @@
                     <figure>
                         <img src="<%- location[i].image %>" class="img-responsive">
                         <figcaption>
-                            <a href="/<%= stateName %>-<%- location[i].name %>-all-travelPosts-<%- location[i]._id %>"><h2 style="text-align: center;"><%- location[i].name %></h2></a>
+                            <a href="/<%= stateName %>/<%- location[i].name %>/all/travelPosts/<%- location[i]._id %>/"><h2 style="text-align: center;"><%- location[i].name %></h2></a>
                             <p><%- location[i].content %></p>
                         </figcaption>
                     </figure>

@@ -10,7 +10,7 @@ module.exports = (req, res) => {
         }, (error, post) => {
             if (post) {
                 req.flash('success', `You have successfully created new ${req.params.postType} Post!`);
-                res.redirect(`/single-video-${req.params.postType}-${post.slug}-${post._id}`);
+                res.redirect(`/video/${req.params.postType}/${post.slug}/${post._id}/`);
             }
             else {
                 req.flash('warning', 'Some error occure. Please try again later!');

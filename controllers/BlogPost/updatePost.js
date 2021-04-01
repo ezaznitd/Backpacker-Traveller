@@ -24,26 +24,26 @@ module.exports = async (req, res) => {
                 ViewsCount.findByIdAndUpdate(req.params.id, newPost, (err, post) => {
                     if (post) {
                         req.flash('info', `You have successfully updated the ${req.params.postType}!`);
-                        res.redirect(`/single-post-${req.params.postType}-${post.title}-${req.params.id}`);
+                        res.redirect(`/post/${req.params.postType}/${post.title}/${req.params.id}/`);
                     }
                     else {
                         req.flash('warning', `Some error occure during updating your ${req.params.postType} please try again after some time!`);
-                        res.redirect(`/single-post-${req.params.postType}-${req.params.title}-${req.params.id}`);
+                        res.redirect(`/post/${req.params.postType}/${post.title}/${req.params.id}/`);
                     }
                 });
             }
             catch (err) {
                 req.flash('warning', `Some error occure during updating your ${req.params.postType} please try again after some time!`);
-                res.redirect(`/single-post-${req.params.postType}-${req.params.title}-${req.params.id}`);
+                res.redirect(`/post/${req.params.postType}/${post.title}/${req.params.id}/`);
             }
         }
         else {
             req.flash('warning', `You do not have the permission to update a ${req.params.postType}!`);
-            res.redirect(`/single-post-${req.params.postType}-${req.params.title}-${req.params.id}`);
+            res.redirect(`/post/${req.params.postType}/${post.title}/${req.params.id}/`);
         }
     }
     else {
         req.flash('warning', `Please log in before updating a ${req.params.postType}!`);
-        res.redirect(`/single-post-${req.params.postType}-${req.params.title}-${req.params.id}`);
+        res.redirect(`/post/${req.params.postType}/${post.title}/${req.params.id}/`);
     }
 }

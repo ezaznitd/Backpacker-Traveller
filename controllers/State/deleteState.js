@@ -18,20 +18,20 @@ module.exports = async (req, res) => {
                                     TravelPost.findByIdAndDelete(post2[j]._id, (err3, post3) => {
                                         if (err3) {
                                             req.flash('warning', 'Some error occure. Please try again later!');
-                                            res.redirect(`/${req.params.stateName}-all-locations-${req.params.stateId}`);
+                                            res.redirect(`/${req.params.stateName}/all/locations/${req.params.stateId}/`);
                                         }
                                     })
                                 }
                             }
                             else {
                                 req.flash('warning', 'Some error occure. Please try again later!');
-                                res.redirect(`/${req.params.stateName}-all-locations-${req.params.stateId}`);
+                                res.redirect(`/${req.params.stateName}/all/locations/${req.params.stateId}/`);
                             }
                         })
                         Location.findByIdAndDelete(post1[i]._id, (err4, post4) => {
                             if (err4) {
                                 req.flash('warning', 'Some error occure. Please try again later!');
-                                res.redirect(`/${req.params.stateName}-all-locations-${req.params.stateId}`);
+                                res.redirect(`/${req.params.stateName}/all/locations/${req.params.stateId}/`);
                             }
                         })
                     }
@@ -42,23 +42,23 @@ module.exports = async (req, res) => {
                         }
                         else {
                             req.flash('warning', 'Some error occure. Please try again later!');
-                            res.redirect(`/${req.params.stateName}-all-locations-${req.params.stateId}`);
+                            res.redirect(`/${req.params.stateName}/all/locations/${req.params.stateId}/`);
                         }
                     })
                 }
                 else {
                     req.flash('warning', 'Some error occure. Please try again later!');
-                    res.redirect(`/${req.params.stateName}-all-locations-${req.params.stateId}`);
+                    res.redirect(`/${req.params.stateName}/all/locations/${req.params.stateId}/`);
                 }
             })
         }
         else {
             req.flash('warning', 'You do not have the permission to delete the post!');
-            res.redirect(`/${req.params.stateName}-all-locations-${req.params.stateId}`);
+            res.redirect(`/${req.params.stateName}/all/locations/${req.params.stateId}/`);
         }
     }
     else {
         req.flash('warning', 'You are not logged in. Please logged in before delete the post!');
-        res.redirect(`/${req.params.stateName}-all-locations-${req.params.stateId}`);
+        res.redirect(`/${req.params.stateName}/all/locations/${req.params.stateId}/`);
     }
 }

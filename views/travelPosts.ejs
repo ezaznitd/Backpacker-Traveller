@@ -1,8 +1,8 @@
 <%if (auth=='600c0f0fbc4b391f0135065e') { %>
     <div class="editPost">
-        <a href="/new-travelPost-<%= stateName %>-<%= locationName %>-<%= locationId %>" ><i class="fa fa-plus"></i></a>
-        <a href="/get-location-<%= stateName %>-<%= locationName %>-<%= locationId %>" ><i class="fa fa-pencil-square-o"></i></a>
-        <a href="/delete-location-<%= stateName %>-<%= locationName %>-<%= locationId %>" onclick="return confirm('Are you sure you want to delete this post?');"><i class="fa fa-trash"></i></a>
+        <a href="/new/travelPost/<%= stateName %>/<%= locationName %>/<%= locationId %>/" ><i class="fa fa-plus"></i></a>
+        <a href="/get/location/<%= stateName %>/<%= locationName %>/<%= locationId %>/" ><i class="fa fa-pencil-square-o"></i></a>
+        <a href="/delete/location/<%= stateName %>/<%= locationName %>/<%= locationId %>/" onclick="return confirm('Are you sure you want to delete this post?');"><i class="fa fa-trash"></i></a>
     </div>
     <br><br>
 <% } %>
@@ -22,7 +22,7 @@
                             </div>
                         </div>
                         <div class="col-md-7 animate-box">
-                            <a href="/<%= stateName %>-<%= locationName %>-single-travelPost-<%- travelPost[i].slug %>-<%- travelPost[i]._id %>" class="fh5co_magna py-2"> <%- travelPost[i].title %></a><br>
+                            <a href="/<%= stateName %>/<%= locationName %>/travelPost/<%- travelPost[i].slug %>/<%- travelPost[i]._id %>/" class="fh5co_magna py-2"> <%- travelPost[i].title %></a><br>
                             <a href="#" class="fh5co_mini_time py-3"> <%- travelPost[i].username %></a>
                             on <%- travelPost[i].createdAt.toDateString() %>
                             <div class="fh5co_consectetur"><%- travelPost[i].description %></div>
@@ -68,21 +68,21 @@
         <div class="row mx-0">
             <div class="col-12 text-center pb-4 pt-4">
                 <% if (prevPage > 0) { %>
-                    <a href="/<%= stateName %>-<%= locationName %>-travelPosts-<%= locationId %>-<%- prevPage %>" class="btn_mange_pagging">Prev</a>
+                    <a href="/<%= stateName %>/<%= locationName %>/travelPosts/<%= locationId %>/<%- prevPage %>/" class="btn_mange_pagging">Prev</a>
                 <% } else { %>
-                    <a href="/<%= stateName %>-<%= locationName %>-travelPosts-<%= locationId %>-<%- currPageNo %>" class="btn_mange_pagging">Prev</a>
+                    <a href="/<%= stateName %>/<%= locationName %>/travelPosts/<%= locationId %>/<%- currPageNo %>/" class="btn_mange_pagging">Prev</a>
                 <% } %>
                 <% if (currPageNo == pageCount) { %>
                     <a href="#" class="btn_pagging">...</a>
-                    <a href="/<%= stateName %>-<%= locationName %>-travelPosts-<%= locationId %>-<%- currPageNo %>" class="btn_pagging"><%- currPageNo %></a>
+                    <a href="/<%= stateName %>/<%= locationName %>/travelPosts/<%= locationId %>/<%- currPageNo %>/" class="btn_pagging"><%- currPageNo %></a>
                 <% } else { %>
-                    <a href="/<%= stateName %>-<%= locationName %>-travelPosts-<%= locationId %>-<%- currPageNo %>" class="btn_pagging"><%- currPageNo %></a>
+                    <a href="/<%= stateName %>/<%= locationName %>/travelPosts/<%= locationId %>/<%- currPageNo %>/" class="btn_pagging"><%- currPageNo %></a>
                     <a href="#" class="btn_pagging">...</a>
                 <% } %>
                 <% if (nextPage <= pageCount) { %>
-                    <a href="/<%= stateName %>-<%= locationName %>-travelPosts-<%= locationId %>-<%- nextPage %>" class="btn_mange_pagging">Next</a>
+                    <a href="/<%= stateName %>/<%= locationName %>/travelPosts/<%= locationId %>/<%- nextPage %>/" class="btn_mange_pagging">Next</a>
                 <% } else { %>
-                    <a href="/<%= stateName %>-<%= locationName %>-travelPosts-<%= locationId %>-<%- currPageNo %>" class="btn_mange_pagging">Next</a>
+                    <a href="/<%= stateName %>/<%= locationName %>/travelPosts/<%= locationId %>/<%- currPageNo %>/" class="btn_mange_pagging">Next</a>
                 <% } %>
              </div>
         </div>
@@ -100,7 +100,7 @@
                     <div class="fh5co_hover_news_img">
                         <div class="fh5co_news_img"><img src="<%- posts[i].image %>" alt=""/></div>
                         <div>
-                            <a href="single.html" class="d-block fh5co_small_post_heading"><span class=""><%- posts[i].title %></span></a>
+                            <a href="#" class="d-block fh5co_small_post_heading"><span class=""><%- posts[i].title %></span></a>
                             <div class="c_g"><i class="fa fa-clock-o"></i> <%- posts[i].createdAt.toDateString() %></div>
                         </div>
                     </div>

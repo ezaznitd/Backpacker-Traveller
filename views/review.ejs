@@ -15,8 +15,8 @@
 
 <%if (auth=='600c0f0fbc4b391f0135065e') { %>
     <div class="editPost">
-        <a href="/get-video-<%= review.postType %>-<%= review.slug %>-<%= review._id %>" ><i class="fa fa-pencil-square-o"></i></a>
-        <a href="/delete-video-<%= review.postType %>-<%= review.slug %>-<%= review._id %>" onclick="return confirm('Are you sure you want to delete this post?');"><i class="fa fa-trash"></i></a>
+        <a href="/get/video/<%= review.postType %>/<%= review.slug %>/<%= review._id %>/" ><i class="fa fa-pencil-square-o"></i></a>
+        <a href="/delete/video/<%= review.postType %>/<%= review.slug %>/<%= review._id %>/" onclick="return confirm('Are you sure you want to delete this post?');"><i class="fa fa-trash"></i></a>
     </div>
     <br><br>
 <% } %>
@@ -104,7 +104,7 @@
                     <div class="fh5co_hover_news_img">
                         <div class="fh5co_news_img"><img src="<%- posts[i].image %>" alt=""/></div>
                         <div>
-                            <a href="single.html" class="d-block fh5co_small_post_heading"><span class=""><%- posts[i].title %></span></a>
+                            <a href="#" class="d-block fh5co_small_post_heading"><span class=""><%- posts[i].title %></span></a>
                             <div class="c_g"><i class="fa fa-clock-o"></i> <%- posts[i].createdAt.toDateString() %></div>
                         </div>
                     </div>

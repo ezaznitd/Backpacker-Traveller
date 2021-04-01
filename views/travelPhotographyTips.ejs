@@ -15,7 +15,7 @@
 
 <%if (auth=='600c0f0fbc4b391f0135065e') { %>
     <div class="editPost">
-        <a href="/get-travelPhotographyTips-<%= id %>" ><i class="fa fa-pencil-square-o"></i></a>
+        <a href="/get/travelPhotographyTips/<%= id %>/" ><i class="fa fa-pencil-square-o"></i></a>
     </div>
     <br><br>
 <% } %>
@@ -68,20 +68,9 @@
                     <a href="#" class="fh5co_tagg">Social</a>
                     <a href="#" class="fh5co_tagg">Three</a>
                 </div>
-                <div>
+                <!-- <div>
                     <div class="fh5co_heading fh5co_heading_border_bottom pt-3 py-2 mb-4">Most Popular</div>
-                </div>
-                <% for(var i=0; i < Math.min(posts.length, 5); i++) { %>
-                    <div class="row pb-3">
-                        <div class="col-5 align-self-center">
-                            <img src="<%- posts[i].image %>" alt="img" class="fh5co_most_trading"/>
-                        </div>
-                        <div class="col-7 paddding">
-                            <div class="most_fh5co_treding_font"> <%- posts[i].title %>.</div>
-                            <div class="most_fh5co_treding_font_123"> <%- posts[i].createdAt.toDateString() %></div>
-                        </div>
-                    </div>
-                <% } %>
+                </div> -->
             </div>
         </div>
     </div>

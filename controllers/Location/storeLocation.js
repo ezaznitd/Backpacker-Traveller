@@ -9,7 +9,7 @@ module.exports = (req, res) => {
         }, (error, post) => {
             if (post) {
                 req.flash('success', 'You have successfully created new Location!');
-                res.redirect(`/${req.params.stateName}-${post.name}-all-travelPosts-${post._id}`);
+                res.redirect(`/${req.params.stateName}/${post.name}/all/travelPosts/${post._id}/`);
             }
             else {
                 req.flash('warning', 'Some error occure. Please try again later!');

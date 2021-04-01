@@ -1,19 +1,19 @@
 module.exports = (req, res, next) => {
     if (!req.body.name) {
         req.flash('danger', 'Please enter location name!');
-        return res.redirect(`/new-location-${req.params.stateName}-${req.params.stateId}`);
+        return res.redirect(`/new/location/${req.params.stateName}/${req.params.stateId}/`);
     }
     else if (!req.body.username) {
         req.flash('danger', 'Please enter username!');
-        return res.redirect(`/new-location-${req.params.stateName}-${req.params.stateId}`);
+        return res.redirect(`/new/location/${req.params.stateName}/${req.params.stateId}/`);
     }
     else if (!req.body.content) {
         req.flash('danger', 'Please enter content!');
-        return res.redirect(`/new-location-${req.params.stateName}-${req.params.stateId}`);
+        return res.redirect(`/new/location/${req.params.stateName}/${req.params.stateId}/`);
     }
     else if (!req.body.image) {
         req.flash('danger', 'Please enter image!');
-        return res.redirect(`/new-location-${req.params.stateName}-${req.params.stateId}`);
+        return res.redirect(`/new/location/${req.params.stateName}/${req.params.stateId}/`);
     }
     var str = req.body.name;
     for (var i = 0; i < str.length; i++) {
@@ -31,7 +31,7 @@ module.exports = (req, res, next) => {
         }
         else {
             req.flash('danger', 'Please check location name!');
-            return res.redirect(`/new-location-${req.params.stateName}-${req.params.stateId}`);
+            return res.redirect(`/new/location/${req.params.stateName}/${req.params.stateId}/`);
         }
     }
 

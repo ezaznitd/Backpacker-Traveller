@@ -8,21 +8,21 @@ module.exports = async (req, res) => {
             Photo.findByIdAndDelete(req.params.id, (err, docs) => {
                 if(docs) {
                     req.flash('success', 'You have successfully deleted the photo!');
-                    res.redirect('/photos');
+                    res.redirect('/photos/');
                 }
                 else {
                     req.flash('warning', 'Some error occure. Please try again later!');
-                    res.redirect('/photos');
+                    res.redirect('/photos/');
                 }
             });
         }
         else {
             req.flash('warning', 'You do not have the permission to delete the post!');
-            res.redirect('/photos');
+            res.redirect('/photos/');
         }
     }
     else {
         req.flash('warning', 'You are not logged in. Please logged in before delete the post!');
-        res.redirect('/photos');
+        res.redirect('/photos/');
     }
 }

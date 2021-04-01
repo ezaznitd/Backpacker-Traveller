@@ -1,6 +1,6 @@
 <%if (auth=='600c0f0fbc4b391f0135065e') { %>
     <div class="editPost">
-        <a href="/new-video-<%- postType %>" ><i class="fa fa-plus"></i></a>
+        <a href="/new/video/<%- postType %>/" ><i class="fa fa-plus"></i></a>
     </div>
     <br><br>
 <% } %>
@@ -22,7 +22,7 @@
                             </div>
                         </div>
                         <div class="col-md-7 animate-box">
-                            <a href="/single-video-<%- reviews[i].postType %>-<%- reviews[i].slug %>-<%- reviews[i]._id %>" class="fh5co_magna py-2"> <%- reviews[i].title %></a><br>
+                            <a href="/video/<%- reviews[i].postType %>/<%- reviews[i].slug %>/<%- reviews[i]._id %>/" class="fh5co_magna py-2"> <%- reviews[i].title %></a><br>
                             <a href="#" class="fh5co_mini_time py-3"> <%- reviews[i].username %></a>
                             on <%- reviews[i].createdAt.toDateString() %>
                         </div>
@@ -31,21 +31,21 @@
                 <br>
                 <div style="text-align: center;">
                     <% if (prevPage > 0) { %>
-                        <a href="/videos-<%- postType %>-<%- prevPage %>" class="btn_mange_pagging">Prev</a>
+                        <a href="/videos/<%- postType %>/<%- prevPage %>/" class="btn_mange_pagging">Prev</a>
                     <% } else { %>
-                        <a href="/videos-<%- postType %>-<%- currPageNo %>" class="btn_mange_pagging">Prev</a>
+                        <a href="/videos/<%- postType %>/<%- currPageNo %>/" class="btn_mange_pagging">Prev</a>
                     <% } %>
                     <% if (currPageNo == pageCount) { %>
                         <a href="#" class="btn_pagging">...</a>
-                        <a href="/videos-<%- postType %>-<%- currPageNo %>" class="btn_pagging"><%- currPageNo %></a>
+                        <a href="/videos/<%- postType %>/<%- currPageNo %>/" class="btn_pagging"><%- currPageNo %></a>
                     <% } else { %>
-                        <a href="/videos-<%- postType %>-<%- currPageNo %>" class="btn_pagging"><%- currPageNo %></a>
+                        <a href="/videos/<%- postType %>/<%- currPageNo %>/" class="btn_pagging"><%- currPageNo %></a>
                         <a href="#" class="btn_pagging">...</a>
                     <% } %>
                     <% if (nextPage <= pageCount) { %>
-                        <a href="/videos-<%- postType %>-<%- nextPage %>" class="btn_mange_pagging">Next</a>
+                        <a href="/videos/<%- postType %>/<%- nextPage %>/" class="btn_mange_pagging">Next</a>
                     <% } else { %>
-                        <a href="/videos-<%- postType %>-<%- currPageNo %>" class="btn_mange_pagging">Next</a>
+                        <a href="/videos/<%- postType %>/<%- currPageNo %>/" class="btn_mange_pagging">Next</a>
                     <% } %>
                 </div>
             </div>
@@ -78,7 +78,7 @@
                         </div>
                         <div class="col-7 paddding">
                             <div class="most_fh5co_treding_font">
-                                <a href="/single-post-<%- trending[i].postType %>-<%- trending[i].slug %>-<%- trending[i]._id %>" class="fh5co_magna py-2"> <%- trending[i].title %></a>
+                                <a href="/post/<%- trending[i].postType %>/<%- trending[i].slug %>/<%- trending[i]._id %>/" class="fh5co_magna py-2"> <%- trending[i].title %></a>
                             </div>
                             <div class="most_fh5co_treding_font_123"> <i class="fa fa-clock-o"></i> <%- trending[i].createdAt.toDateString() %></div>
                         </div>
@@ -100,7 +100,7 @@
                     <div class="fh5co_hover_news_img">
                         <div class="fh5co_news_img"><img src="<%- lastModified[i].image %>" alt=""/></div>
                         <div>
-                            <a href="/single-post-<%- lastModified[i].postType %>-<%- lastModified[i].slug %>-<%- lastModified[i]._id %>" class="d-block fh5co_small_post_heading"><span class=""><%- lastModified[i].title %></span></a>
+                            <a href="/post/<%- lastModified[i].postType %>/<%- lastModified[i].slug %>/<%- lastModified[i]._id %>/" class="d-block fh5co_small_post_heading"><span class=""><%- lastModified[i].title %></span></a>
                             <div class="c_g"><i class="fa fa-clock-o"></i> <%- lastModified[i].createdAt.toDateString() %></div>
                         </div>
                     </div>

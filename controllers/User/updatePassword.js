@@ -7,7 +7,7 @@ module.exports = async (req, res) => {
     .then(user => {
         if (!user) {
             req.flash('info', 'Try again! your session expired');
-            res.redirect('/auth-login');
+            res.redirect('/auth-/login/');
         }
         user.password = req.body.password;
         user.resetToken = undefined;
@@ -18,6 +18,6 @@ module.exports = async (req, res) => {
         res.redirect('/');
     }).catch(err => {
         req.flash('danger', 'Some error occure. Please try again later.');
-        res.redirect('/auth-login');
+        res.redirect('/auth/login/');
     })
 }

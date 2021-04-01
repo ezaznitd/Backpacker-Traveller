@@ -19,13 +19,13 @@ module.exports = async (req, res) => {
                     if (post) {
                         req.flash('info', 'You have successfully updated the travel photography tips!');
                         if (post._id == '60534749775cb32b2bc6f96f') {
-                            res.redirect(`/travel-photography-tips-${post._id}`);
+                            res.redirect(`/travel-photography-tips/${post._id}/`);
                         }
                         else if (post._id == '6053495d775cb32b2bc6f970') {
-                            res.redirect(`/best-travel-camera-${post._id}`);
+                            res.redirect(`/best-travel-camera/${post._id}/`);
                         }
                         else if (post._id == '60534bae72fd9c2feb14e3e2') {
-                            res.redirect(`/my-photo-gear-${post._id}`);
+                            res.redirect(`/my-photo-gear/${post._id}/`);
                         }
                         else {
                             res.redirect('/');
