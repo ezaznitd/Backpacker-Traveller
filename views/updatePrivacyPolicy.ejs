@@ -1,0 +1,58 @@
+<!-- Page Header -->
+<header class="masthead">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="page-heading">
+                <h1>Update <%- policyType %></h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    </header>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <%if (success.length > 0) { %>
+                    <div class="alert alert-success alert-dismissible message" style="text-align: center;">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <strong>Congratulations!</strong> <%- success %>
+                    </div>
+                <% } else if (warning.length > 0) { %>
+                    <div class="alert alert-warning alert-dismissible message" style="text-align: center;">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <strong>Warning!</strong> <%- warning %>
+                    </div>
+                <% } else if (danger.length > 0) { %>
+                    <div class="alert alert-danger alert-dismissible message">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <strong>Danger!</strong> <%- danger %>
+                    </div>
+                <% } else if (info.length > 0) { %>
+                    <div class="alert alert-info alert-dismissible message" style="text-align: center;">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <strong>Info!</strong> <%- info %>
+                    </div>
+                <% } %>
+                <form action="/privacyPolicy/update/<%- policyType %>/<%- privacyPolicy._id %>/" method="POST" encType="multipart/form-data">
+                    <div class="control-group">
+                        <div class="form-group floating-label-form-group controls">
+                            <label>Username</label>
+                            <input type="text" name="username" placeholder="Username" class="form-control" value="<%- privacyPolicy.username %>">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="form-group floating-label-form-group controls">
+                            <label>Content</label>
+                            <textarea name="content" placeholder="Content ..." cols="30" rows="10" class="form-control"><%- privacyPolicy.content %></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group my-4 text-center">
+                        <button class="btn btn-primary">Update <%- policyType %></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>

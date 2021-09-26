@@ -14,6 +14,27 @@
     
     <div class="container">
         <div class="row">
+            <%if (success.length > 0) { %>
+                <div class="alert alert-success alert-dismissible message" style="text-align: center;">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <strong>Congratulations!</strong> <%- success %>
+                </div>
+            <% } else if (warning.length > 0) { %>
+                <div class="alert alert-warning alert-dismissible message" style="text-align: center;">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <strong>Warning!</strong> <%- warning %>
+                </div>
+            <% } else if (danger.length > 0) { %>
+                <div class="alert alert-danger alert-dismissible message">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <strong>Danger!</strong> <%- danger %>
+                </div>
+            <% } else if (info.length > 0) { %>
+                <div class="alert alert-info alert-dismissible message" style="text-align: center;">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <strong>Info!</strong> <%- info %>
+                </div>
+            <% } %>
             <div class="col-md-8 offset-md-2">
                 <form action="/state/update/<%= state.name %>/<%- state._id %>/" method="POST" encType="multipart/form-data">
                     <div class="control-group">

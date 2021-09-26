@@ -19,6 +19,11 @@
                 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                 <strong>Warning!</strong> <%- warning %>
             </div>
+        <% } else if (danger.length > 0) { %>
+            <div class="alert alert-danger alert-dismissible message">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <strong>Danger!</strong> <%- danger %>
+            </div>
         <% } else if (info.length > 0) { %>
             <div class="alert alert-info alert-dismissible message" style="text-align: center;">
                 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>

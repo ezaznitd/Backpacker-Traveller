@@ -19,6 +19,7 @@ module.exports = async (req, res) => {
         success: req.flash('success'),
         warning: req.flash('warning'),
         info: req.flash('info'),
+        danger: req.flash('danger'),
         posts,
         travelStories,
         travelTips,
