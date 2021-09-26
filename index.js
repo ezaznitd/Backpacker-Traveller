@@ -53,6 +53,8 @@ const getCurrentLocationController = require('./controllers/Location/getCurrentL
 const getCurrentTravelPostController = require('./controllers/TravelPost/getCurrentTravelPost');
 const getCurrentTravelPhotographyTipsController = require('./controllers/Photography/getCurrentTravelPhotographyTips');
 const getPrivacyPolicyController = require('./controllers/PrivacyPolicy/get-privacy-policy');
+const getFAQController = require('./controllers/FAQ/get-FAQ');
+const getFAQUpdateController = require('./controllers/FAQ/get-FAQ-update');
 const getRelatedPostController = require('./controllers/Search/getRelatedPost');
 const updatePostController = require('./controllers/BlogPost/updatePost');
 const updateReviewController = require('./controllers/Video/updateVideo');
@@ -62,6 +64,7 @@ const updateLocationController = require('./controllers/Location/updateLocation'
 const updateTravelPostController = require('./controllers/TravelPost/updateTravelPost');
 const updateTravelPhotographyTipsController = require('./controllers/Photography/updateTravelPhotographyTips');
 const updatePrivacyPolicyController = require('./controllers/PrivacyPolicy/update-privacy-policy');
+const updateFAQController = require('./controllers/FAQ/update-FAQ');
 const searchController = require('./controllers/Search/search');
 const searchTextController = require('./controllers/Search/searchText');
 const createReviewController = require('./controllers/Video/createVideo');
@@ -93,6 +96,7 @@ const updatePhoto = require('./middleware/Photo/updatePhoto');
 const storeLocation = require('./middleware/Location/storeLocation');
 const updateLocation = require('./middleware/Location/updateLocation');
 const storeTravelPost = require('./middleware/TravelPost/storeTravelPost');
+const updateFAQ = require('./middleware/FAQ/update-FAQ');
 const storeFAQ = require('./middleware/FAQ/store-FAQ');
 const updateTravelPost = require('./middleware/TravelPost/updateTravelPost');
 const updateTravelPhotographyTips = require('./middleware/TravelPhotographyTips/updateTravelPhotographyTips');
@@ -203,6 +207,8 @@ app.get('/get/location/:stateName/:locationName/:locationId/', getCurrentLocatio
 app.get('/get/travelPost/:stateName/:locationName/:postTitle/:postId/', getCurrentTravelPostController);
 app.get('/get/travelPhotographyTips/:id/', getCurrentTravelPhotographyTipsController);
 app.get('/get/:policyType/:policyId', getPrivacyPolicyController);
+app.get('/get/FAQ/', getFAQController);
+app.post('/get/FAQ/update/', getFAQUpdateController);
 app.get('/get/relatedPost-:query/', getRelatedPostController);
 app.post('/posts/update/:postType/:postTitle/:id/', updatePost, updatePostController);
 app.post('/video/update/:postType/:postTitle/:id/', updateReview, updateReviewController);
@@ -212,6 +218,7 @@ app.post('/location/update/:stateName/:locationName/:locationId/', updateLocatio
 app.post('/travelPost/update/:stateName/:locationName/:postTitle/:postId/', updateTravelPost, updateTravelPostController);
 app.post('/travelPhotographyTips/update/:id/', updateTravelPhotographyTips, updateTravelPhotographyTipsController);
 app.post('/privacyPolicy/update/:policyType/:policyId', updatePrivacyPolicy, updatePrivacyPolicyController);
+app.post('/FAQ/update/:faqId/', updateFAQ, updateFAQController);
 app.get('/change/language/', changeLanguageController);
 app.get('/reset/user/password/', resetUserPasswordController);
 app.post('/reset/password/', resetPasswordController);

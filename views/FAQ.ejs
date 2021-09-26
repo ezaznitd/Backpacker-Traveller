@@ -1,11 +1,3 @@
-<%if (auth=='600c0f0fbc4b391f0135065e') { %>
-    <div class="editPost">
-        <a href="/new/FAQ/" ><i class="fa fa-plus"></i></a>
-        <a href="/FAQ/update/" ><i class="fa fa-pencil-square-o"></i></a>
-        <a href="/delete/FAQ/" onclick="return confirm('Are you sure you want to delete this post?');"><i class="fa fa-trash"></i></a>
-    </div>
-    <br><br>
-<% } %>
 
 <section id="portfolio" class="section-padding wow fadeInUp delay-05s FAQ">
     <div class="container">
@@ -20,17 +12,43 @@
                 <div class="tab-content">
                     <div class="accordion">
                         <div class="card">
-                            <% for(var i=0; i < faq.length; i++) { %>
-                                <div class="card-header" id="infraOne">
-                                    <a href="#collapseOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                                        <p class="mb-0"><%- faq[i].question %></p>
-                                    </a>
-                                </div>
-                                <div id="collapseOne" class="collapse" aria-labelledby="infraOne" data-parent="#accordion">
-                                    <div class="card-body"><%- faq[i].content %></div>
-                                </div>
-                            <% } %>
-                        </div>
+							<div class="card-header" id="infraOne">
+								<a href="#collapseOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+									<p class="mb-0">
+								  What is the uptime for Solodev CMS? 
+									</p>
+								</a>
+							</div>
+							<div id="collapseOne" class="collapse" aria-labelledby="infraOne" data-parent="#accordion">
+								<div class="card-body">
+								Using Amazon AWS technology which is an industry leader for reliability you will be able to experience an uptime in the vicinity of 99.95%.
+								</div>
+							</div>
+						</div><!-- close card-->
+						<div class="card">
+							<div class="card-header" id="infraTwo">
+								<a href="#collapseTwo" class="collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+								  <p class="mb-0">What technology does Solodev CMS use?</p>
+								</a>
+							</div>
+							<div id="collapseTwo" class="collapse" aria-labelledby="infraTwo" data-parent="#accordion">
+								<div class="card-body">
+								Solodev CMS is built using PHP, Javascript, HTML and CSS.
+								</div>
+							</div>
+						</div><!-- card-->
+						<div class="card">
+							<div class="card-header" id="infraThree">
+								<a href="#collapseThree" class="collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+									<p class="mb-0">What browsers does Solodev CMS support?</p>
+								</a>
+							</div>
+							<div id="collapseThree" class="collapse" aria-labelledby="infraThree" data-parent="#accordion">
+								<div class="card-body">
+								We support the current and previous major releases of Google Chrome™, Firefox®, Safari®, Microsoft® Edge™, and Internet Explorer® on a rolling basis. Each time a new version is released, we begin supporting that version and stop supporting the third most recent version.
+								</div>
+							</div>
+						</div>
                     </div>
                 </div>
             </div>

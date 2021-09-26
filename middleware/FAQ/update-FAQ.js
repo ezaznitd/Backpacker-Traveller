@@ -1,5 +1,5 @@
 module.exports = (req, res, next) => {
-    if (!req.body.username) {
+    if (!req.body['username']) {
         req.flash('danger', 'Please enter the username!');
         return res.redirect(`/FAQ/`);
     }
@@ -11,6 +11,4 @@ module.exports = (req, res, next) => {
         req.flash('danger', 'Please enter the content!');
         return res.redirect(`/FAQ/`);
     }
- 
-    next()
 }
