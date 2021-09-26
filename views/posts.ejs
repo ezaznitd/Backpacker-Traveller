@@ -1,6 +1,6 @@
 <%if (auth=='600c0f0fbc4b391f0135065e') { %>
     <div class="editPost">
-        <a href="/new-post/<%- postType %>/" ><i class="fa fa-plus"></i></a>
+        <a href="/new/post/<%- postType %>/" ><i class="fa fa-plus"></i></a>
     </div>
     <br><br>
 <% } %>
@@ -34,7 +34,10 @@
                     <% } else { %>
                         <a href="/posts/<%- postType %>/<%- currPageNo %>/" class="btn_mange_pagging">Prev</a>
                     <% } %>
-                    <% if (currPageNo == pageCount) { %>
+                    <% if (currPageNo == 1) { %>
+                        <a href="/posts/<%- postType %>/<%- currPageNo %>/" class="btn_pagging"><%- currPageNo %></a>
+                        <a href="#" class="btn_pagging">...</a>
+                    <% } else if (currPageNo == pageCount) { %>
                         <a href="#" class="btn_pagging">...</a>
                         <a href="/posts/<%- postType %>/<%- currPageNo %>/" class="btn_pagging"><%- currPageNo %></a>
                     <% } else { %>
@@ -92,7 +95,7 @@
 <div class="container-fluid pb-4 pt-5">
     <div class="container animate-box">
         <div>
-            <div class="fh5co_heading fh5co_heading_border_bottom py-2 mb-4">Last Modified</div>
+            <div class="fh5co_heading fh5co_heading_border_bottom py-2 mb-4">Recent Travel Story</div>
         </div>
         <div class="owl-carousel owl-theme" id="slider2">
             <% for(var i=0; i < Math.min(lastModified.length, 6); i++) { %>

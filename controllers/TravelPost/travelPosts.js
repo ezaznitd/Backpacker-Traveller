@@ -9,11 +9,11 @@ module.exports = async (req, res) => {
         req.session.language = 'english';
     }
     const query = {locationId: `${req.params.locationId}`};
-    const posts = await ViewsCount.find({postType: 'Blog Post', postLanguage: req.session.language}).sort({createdAt: -1});
+    const lastModified = await ViewsCount.find({postLanguage: req.session.language}).limit(6).sort({updatedAt: -1});
+    const trending = await ViewsCount.find({postLanguage: req.session.language}).limit(5).sort({viewsCount: -1});
     const states = await State.find({});
     const NoOfPosts = await TravelPost.find({locationId: req.params.locationId}).countDocuments();
     var pageCount = NoOfPosts / 4;
-    console.log(pageCount);
     TravelPost.find(query, (err, travelPost) => {
         if (travelPost) {
             res.render("travelPosts", {
@@ -21,7 +21,8 @@ module.exports = async (req, res) => {
                 warning: req.flash('warning'),
                 info: req.flash('info'),
                 travelPost,
-                posts,
+                lastModified,
+                trending,
                 locationId: req.params.locationId,
                 locationName: req.params.locationName,
                 stateName: req.params.stateName,

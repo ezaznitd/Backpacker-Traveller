@@ -9,7 +9,7 @@
         <div class="row mx-0">
             <div class="col-md-8 animate-box" data-animate-effect="fadeInLeft">
                 <div>
-                    <div class="fh5co_heading fh5co_heading_border_bottom py-2 mb-4">News</div>
+                    <div class="fh5co_heading fh5co_heading_border_bottom py-2 mb-4"><%- postType %></div>
                 </div>
                 <% for(var i=0; i < reviews.length; i++) { %>
                     <div class="row pb-4">
@@ -35,7 +35,10 @@
                     <% } else { %>
                         <a href="/videos/<%- postType %>/<%- currPageNo %>/" class="btn_mange_pagging">Prev</a>
                     <% } %>
-                    <% if (currPageNo == pageCount) { %>
+                    <% if (currPageNo == 1) { %>
+                        <a href="/videos/<%- postType %>/<%- currPageNo %>/" class="btn_pagging"><%- currPageNo %></a>
+                        <a href="#" class="btn_pagging">...</a>
+                    <% } else if (currPageNo == pageCount) { %>
                         <a href="#" class="btn_pagging">...</a>
                         <a href="/videos/<%- postType %>/<%- currPageNo %>/" class="btn_pagging"><%- currPageNo %></a>
                     <% } else { %>
@@ -55,18 +58,19 @@
                 </div>
                 <div class="clearfix"></div>
                 <div class="fh5co_tags_all">
-                    <a href="#" class="fh5co_tagg">Business</a>
+                    <a href="/all/posts/Blog Post/" class="fh5co_tagg">Blog</a>
                     <a href="#" class="fh5co_tagg">Technology</a>
-                    <a href="#" class="fh5co_tagg">Sport</a>
+                    <a href="/travel-photography-tips/60534749775cb32b2bc6f96f/" class="fh5co_tagg">Photographer Tips</a>
+                    <a href="/all/posts/Travel Story/" class="fh5co_tagg">Travel Story</a>
                     <a href="#" class="fh5co_tagg">Art</a>
                     <a href="#" class="fh5co_tagg">Lifestyle</a>
-                    <a href="#" class="fh5co_tagg">Three</a>
+                    <a href="/all/posts/Travel Tip/" class="fh5co_tagg">Travel Tips</a>
+                    <a href="" class="fh5co_tagg">Social</a>
+                    <a href="/best-travel-camera/6053495d775cb32b2bc6f970/" class="fh5co_tagg">Best Camera</a>
+                    <a href="/all/videos/Review/" class="fh5co_tagg">Review</a>
+                    <a href="/all/visitedStates/" class="fh5co_tagg">Explore India</a>
                     <a href="#" class="fh5co_tagg">Photography</a>
-                    <a href="#" class="fh5co_tagg">Lifestyle</a>
-                    <a href="#" class="fh5co_tagg">Art</a>
-                    <a href="#" class="fh5co_tagg">Education</a>
-                    <a href="#" class="fh5co_tagg">Social</a>
-                    <a href="#" class="fh5co_tagg">Three</a>
+                    <a href="/all/videos/Travel Video/" class="fh5co_tagg">Video</a>
                 </div>
                 <div>
                     <div class="fh5co_heading fh5co_heading_border_bottom pt-3 py-2 mb-4">Most Popular</div>
@@ -92,7 +96,7 @@
 <div class="container-fluid pb-4 pt-5">
     <div class="container animate-box">
         <div>
-            <div class="fh5co_heading fh5co_heading_border_bottom py-2 mb-4">Last Modified</div>
+            <div class="fh5co_heading fh5co_heading_border_bottom py-2 mb-4">Recent Travel Story</div>
         </div>
         <div class="owl-carousel owl-theme" id="slider2">
             <% for(var i=0; i < Math.min(lastModified.length, 6); i++) { %>

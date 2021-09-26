@@ -1,18 +1,4 @@
 
-<header class="masthead">
-	<div class="overlay"></div>
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-8 col-md-10 mx-auto">
-				<div class="site-heading">
-					<h1>WELCOME</h1>
-					<span class="subheading">Travel smarter, cheaper, longer Where do you want to go?</span>
-				</div>
-			</div>
-		</div>
-	</div>
-</header>
-
 <%if (auth=='600c0f0fbc4b391f0135065e') { %>
     <div class="editPost">
         <a href="/get/travelPhotographyTips/<%= id %>/" ><i class="fa fa-pencil-square-o"></i></a>
@@ -55,23 +41,58 @@
                 </div>
                 <div class="clearfix"></div>
                 <div class="fh5co_tags_all">
-                    <a href="#" class="fh5co_tagg">Business</a>
+                    <a href="/all/posts/Blog Post/" class="fh5co_tagg">Blog</a>
                     <a href="#" class="fh5co_tagg">Technology</a>
-                    <a href="#" class="fh5co_tagg">Sport</a>
+                    <a href="/travel-photography-tips/60534749775cb32b2bc6f96f/" class="fh5co_tagg">Photographer Tips</a>
+                    <a href="/all/posts/Travel Story/" class="fh5co_tagg">Travel Story</a>
                     <a href="#" class="fh5co_tagg">Art</a>
                     <a href="#" class="fh5co_tagg">Lifestyle</a>
-                    <a href="#" class="fh5co_tagg">Three</a>
+                    <a href="/all/posts/Travel Tip/" class="fh5co_tagg">Travel Tips</a>
+                    <a href="" class="fh5co_tagg">Social</a>
+                    <a href="/best-travel-camera/6053495d775cb32b2bc6f970/" class="fh5co_tagg">Best Camera</a>
+                    <a href="/all/videos/Review/" class="fh5co_tagg">Review</a>
+                    <a href="/all/visitedStates/" class="fh5co_tagg">Explore India</a>
                     <a href="#" class="fh5co_tagg">Photography</a>
-                    <a href="#" class="fh5co_tagg">Lifestyle</a>
-                    <a href="#" class="fh5co_tagg">Art</a>
-                    <a href="#" class="fh5co_tagg">Education</a>
-                    <a href="#" class="fh5co_tagg">Social</a>
-                    <a href="#" class="fh5co_tagg">Three</a>
+                    <a href="/all/videos/Travel Video/" class="fh5co_tagg">Video</a>
                 </div>
-                <!-- <div>
+                <div>
                     <div class="fh5co_heading fh5co_heading_border_bottom pt-3 py-2 mb-4">Most Popular</div>
-                </div> -->
+                </div>
+                <% for(var i=0; i < Math.min(trending.length, 5); i++) { %>
+                    <div class="row pb-3">
+                        <div class="col-5 align-self-center">
+                            <img src="<%- trending[i].image %>" alt="img" class="fh5co_most_trading"/>
+                        </div>
+                        <div class="col-7 paddding">
+                            <div class="most_fh5co_treding_font">
+                                <a href="/post/<%- trending[i].postType %>/<%- trending[i].slug %>/<%- trending[i]._id %>/" class="fh5co_magna py-2"> <%- trending[i].title %></a>
+                            </div>
+                            <div class="most_fh5co_treding_font_123"> <i class="fa fa-clock-o"></i> <%- trending[i].createdAt.toDateString() %></div>
+                        </div>
+                    </div>
+                <% } %>
             </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid pb-4 pt-5">
+    <div class="container animate-box">
+        <div>
+            <div class="fh5co_heading fh5co_heading_border_bottom py-2 mb-4">Recent Travel Story</div>
+        </div>
+        <div class="owl-carousel owl-theme" id="slider2">
+            <% for(var i=0; i < Math.min(lastModified.length, 6); i++) { %>
+                <div class="item px-2">
+                    <div class="fh5co_hover_news_img">
+                        <div class="fh5co_news_img"><img src="<%- lastModified[i].image %>" alt=""/></div>
+                        <div>
+                            <a href="/post/<%- lastModified[i].postType %>/<%- lastModified[i].slug %>/<%- lastModified[i]._id %>/" class="d-block fh5co_small_post_heading"><span class=""><%- lastModified[i].title %></span></a>
+                            <div class="c_g"><i class="fa fa-clock-o"></i> <%- lastModified[i].createdAt.toDateString() %></div>
+                        </div>
+                    </div>
+                </div>
+            <% } %>
         </div>
     </div>
 </div>

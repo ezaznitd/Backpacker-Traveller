@@ -1,18 +1,4 @@
 
-<header class="masthead" style="background-image: url('img/about.jpg')">
-	<div class="overlay"></div>
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-8 col-md-10 mx-auto">
-				<div class="site-heading">
-					<h1>WELCOME</h1>
-					<span class="subheading">Travel smarter, cheaper, longer Where do you want to go?</span>
-				</div>
-			</div>
-		</div>
-	</div>
-</header>
-
 <%if (auth=='600c0f0fbc4b391f0135065e') { %>
     <div class="editPost">
         <a href="/get/video/<%= review.postType %>/<%= review.slug %>/<%= review._id %>/" ><i class="fa fa-pencil-square-o"></i></a>
@@ -41,14 +27,14 @@
         <% } %>
         <div class="row mx-0">
             <div class="col-md-8 animate-box" data-animate-effect="fadeInLeft">
-				<h2 class="post-title" ><%- review.title %></h2>
-				<p class="singlePostMeta">Posted by
+				<h2 class="post-title" style="text-align: center;"><%- review.title %></h2>
+				<p class="singlePostMeta" style="text-align: center;">Posted by
 					<a href="#"><%- review.username %></a>
 					on <%- review.createdAt.toDateString() %>
                 </p>
                 <br>
                 <%if (review.video) { %>
-                    <div class="fh5co_news_img"><iframe id="video" width="100%" height="200"
+                    <div class="fh5co_news_img_video"><iframe class="responsive-iframe"
                         src="<%- review.video %>"
                         frameborder="0" allowfullscreen></iframe></div>
                     <br>
@@ -77,14 +63,16 @@
                 <div>
                     <div class="fh5co_heading fh5co_heading_border_bottom pt-3 py-2 mb-4">Most Popular</div>
                 </div>
-                <% for(var i=0; i < Math.min(posts.length, 5); i++) { %>
+                <% for(var i=0; i < Math.min(trending.length, 5); i++) { %>
                     <div class="row pb-3">
                         <div class="col-5 align-self-center">
-                            <img src="<%- posts[i].image %>" alt="img" class="fh5co_most_trading"/>
+                            <img src="<%- trending[i].image %>" alt="img" class="fh5co_most_trading"/>
                         </div>
                         <div class="col-7 paddding">
-                            <div class="most_fh5co_treding_font"> <%- posts[i].title %>.</div>
-                            <div class="most_fh5co_treding_font_123"> <%- posts[i].createdAt.toDateString() %></div>
+                            <div class="most_fh5co_treding_font">
+                                <a href="/post/<%- trending[i].postType %>/<%- trending[i].slug %>/<%- trending[i]._id %>/" class="fh5co_magna py-2"> <%- trending[i].title %></a>
+                            </div>
+                            <div class="most_fh5co_treding_font_123"> <i class="fa fa-clock-o"></i> <%- trending[i].createdAt.toDateString() %></div>
                         </div>
                     </div>
                 <% } %>
@@ -96,16 +84,16 @@
 <div class="container-fluid pb-4 pt-5">
     <div class="container animate-box">
         <div>
-            <div class="fh5co_heading fh5co_heading_border_bottom py-2 mb-4">News</div>
+            <div class="fh5co_heading fh5co_heading_border_bottom py-2 mb-4">Recent Travel Story</div>
         </div>
         <div class="owl-carousel owl-theme" id="slider2">
-            <% for(var i=0; i < Math.min(posts.length, 6); i++) { %>
+            <% for(var i=0; i < Math.min(lastModified.length, 6); i++) { %>
                 <div class="item px-2">
                     <div class="fh5co_hover_news_img">
-                        <div class="fh5co_news_img"><img src="<%- posts[i].image %>" alt=""/></div>
+                        <div class="fh5co_news_img"><img src="<%- lastModified[i].image %>" alt=""/></div>
                         <div>
-                            <a href="#" class="d-block fh5co_small_post_heading"><span class=""><%- posts[i].title %></span></a>
-                            <div class="c_g"><i class="fa fa-clock-o"></i> <%- posts[i].createdAt.toDateString() %></div>
+                            <a href="/post/<%- lastModified[i].postType %>/<%- lastModified[i].slug %>/<%- lastModified[i]._id %>/" class="d-block fh5co_small_post_heading"><span class=""><%- lastModified[i].title %></span></a>
+                            <div class="c_g"><i class="fa fa-clock-o"></i> <%- lastModified[i].createdAt.toDateString() %></div>
                         </div>
                     </div>
                 </div>

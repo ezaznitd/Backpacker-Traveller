@@ -1,5 +1,6 @@
 const Location = require('../../database/models/Location');
 const State = require('../../database/models/State');
+const ViewsCount = require('../../database/models/ViewsCount');
 const connectDB = require('../../database/connectDB');
 
 module.exports = async (req, res) => {
@@ -10,7 +11,7 @@ module.exports = async (req, res) => {
     const query = {stateId: `${req.params.stateId}`};
     const map = await State.findById(req.params.stateId);
     const states = await State.find({});
-    console.log(req.params.stateName);
+    const lastModified = await ViewsCount.find({postLanguage: req.session.language}).limit(6).sort({updatedAt: -1});
     Location.find(query, (err, location) => {
         if (location) {
             res.render("locations", {
@@ -22,6 +23,7 @@ module.exports = async (req, res) => {
                 map,
                 stateName: req.params.stateName,
                 states,
+                lastModified,
                 dateTime: new Date().toDateString()
             });
         }
