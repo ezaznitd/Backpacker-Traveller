@@ -23,7 +23,7 @@
 <!-- Photography Section -->
 <link href="/css/baker.css" rel="stylesheet" type="text/css"/>
 <link href="/css/login.css" rel="stylesheet" type="text/css"/>
-<link href="/css/FAQ.css" rel="stylesheet" type="text/css"/>
+<link href="/css/collapse-FAQ.css" rel="stylesheet" type="text/css"/>
 <!-- Photography Section -->
 <!-- Modernizr JS -->
 <script src="/js/modernizr-3.5.0.min.js"></script>
@@ -341,11 +341,13 @@
 			</div>
 			<div class="row justify-content-center pt-2 pb-4">
 				<div class="col-12 col-md-8 col-lg-7 ">
-					<div class="input-group">
-						<span class="input-group-addon fh5co_footer_text_box" id="basic-addon1"><i class="fa fa-envelope"></i></span>
-						<input type="text" class="form-control fh5co_footer_text_box" placeholder="Enter your email..." aria-describedby="basic-addon1">
-						<a href="#" class="input-group-addon fh5co_footer_subcribe" id="basic-addon12"> <i class="fa fa-paper-plane-o"></i>&nbsp;&nbsp;Subscribe</a>
-					</div>
+					<form id="addSubscriber" action="/subscriber/store/" method="POST" encType="multipart/form-data">
+						<div class="input-group">
+							<span class="input-group-addon fh5co_footer_text_box" id="basic-addon1"><i class="fa fa-envelope"></i></span>
+							<input type="text" name="email" class="form-control fh5co_footer_text_box" placeholder="Enter your email..." aria-describedby="basic-addon1">
+							<a href="#" onclick="document.getElementById('addSubscriber').submit();" class="input-group-addon fh5co_footer_subcribe" id="basic-addon12"> <i class="fa fa-paper-plane-o"></i>&nbsp;&nbsp;Subscribe</a>
+						</div>
+					</form>
 				</div>
 			</div>
 		</div>
@@ -353,7 +355,7 @@
 	<div class="container-fluid fh5co_footer_right_reserved">
 		<div class="container">
 			<div class="row  ">
-				<div class="col-12 col-md-6 py-4 Reserved"> © Copyright 2021, All rights reserved. Design by <a href="/about-developer" title="Passionate Software Developer" class="footer_last_part_menu">Ezaz Hossain</a></div>
+				<div class="col-12 col-md-6 py-4 Reserved"> © Copyright 2021, All rights reserved. Design by <a href="/about-developer" title="Passionate Software Developer">Ezaz Hossain</a></div>
 				<div class="col-12 col-md-6 spdp_right py-4">
 					<a href="/" class="footer_last_part_menu">Home</a>
 					<a href="/about/" class="footer_last_part_menu">About</a>

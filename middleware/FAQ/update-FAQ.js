@@ -11,4 +11,6 @@ module.exports = (req, res, next) => {
         req.flash('danger', 'Please enter the content!');
         return res.redirect(`/FAQ/`);
     }
+
+    next()
 }

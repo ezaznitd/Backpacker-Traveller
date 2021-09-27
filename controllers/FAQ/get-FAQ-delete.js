@@ -6,7 +6,7 @@ module.exports = async (req, res) => {
     connectDB.databaseConnection;
     const faq = await FAQ.find({});
     const states = await State.find({});
-    res.render('FAQ', {
+    res.render('get-FAQ-delete', {
         success: req.flash('success'),
         warning: req.flash('warning'),
         info: req.flash('info'),

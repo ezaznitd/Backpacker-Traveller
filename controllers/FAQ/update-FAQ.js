@@ -3,7 +3,6 @@ const connectDB = require('../../database/connectDB');
 
 module.exports = async (req, res) => {
     connectDB.databaseConnection;
-    console.log(req.body);
     if (req.session.userId) {
         if (req.session.userId == '600c0f0fbc4b391f0135065e') {
             connectDB.databaseConnection;
